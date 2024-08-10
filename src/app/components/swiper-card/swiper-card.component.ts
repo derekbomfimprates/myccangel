@@ -7,9 +7,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class SwiperCardComponent implements OnInit, OnDestroy {
   images = [
-    '../../../assets/images/home page 1-Grey bkg.png',
-    '../../../assets/images/Chat bot grey background.png',
-    '../../../assets/images/Navigator.gif'
+    'assets/images/home page 1-Grey bkg.png',
+    'assets/images/Chat bot grey background.png',
+    'assets/images/Navigator.gif'
   ];
 
   currentSlideIndex = 0;
