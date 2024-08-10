@@ -1,0 +1,110 @@
+
+/* Cover Picture Styles */
+.cover {
+  padding-top: 20px;
+}
+/* Container Styles for the Page */
+.resources-section {
+  margin: 50px;
+  padding: 50px;
+  border: 5px solid #B95CF4;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #303940;
+  text-align: justify;
+  font-size: 30px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important; /* Space between cards */
+  justify-content: center !important; /* Center align cards */
+}
+
+.resources-section h2 {
+  margin-bottom: 20px;
+  color: #B95CF4;
+  font-size: 38px;
+  font-weight: bolder;
+  width: 100%;
+  margin-top: -10px;
+}
+
+/* Individual Card Styles */
+.square-card {
+  width: 30% !important; /* Width to fit 3 cards per row */
+  padding: 0px !important;
+  border: 2px solid purple !important; /* Border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important; /* Rounded corners */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Center align content */
+  cursor: pointer; /* Indicate that cards are clickable */
+  height: 250px !important; /* Set a fixed height for the cards */
+  position: relative; /* Needed for absolute positioning of description */
+}
+
+/* Card Content Styles */
+.card-content {
+  width: 100%; /* Ensure the card content fills the card width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%; /* Ensure the content fills the card height */
+}
+
+/* Image Styles */
+.card-content img {
+  width: 100% !important;
+  height: 80% !important;
+  max-height: 185px !important; /* Adjust image height */
+  object-fit: cover !important; /* Ensure image fits inside card */
+  flex-grow: 1; /* Ensure image takes up available space */
+  border-top-right-radius: 10px !important; /* Rounded corners */
+  border-top-left-radius: 10px !important; /* Rounded corners */
+}
+
+/* Description Background Styles */
+.card-text {
+  width: 100%; /* Ensure the text block fills the card width */
+  background-color: purple; /* Background color for description */
+  color: white; /* Text color */
+  padding: 10px; /* Padding around text */
+  border-radius: 0 0 10px 10px; /* Rounded corners at bottom */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  text-align: center; /* Center align text */
+  font-size: 14px; /* Set font size for text */
+  position: absolute; /* Absolute positioning for description */
+  bottom: 0; /* Position at the bottom of the card */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .resources-section {
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .resources-section h2 {
+    font-size: 28px;
+  }
+
+  .square-card {
+    width: 100% !important; /* Full width for cards on mobile */
+    padding: 5px !important;
+    height: auto !important; /* Auto height for cards on mobile */
+  }
+
+  .card-content img {
+    max-height: 70px !important; /* Smaller image height on mobile */
+    margin-bottom: 5px !important; /* Reduced space between image and text */
+  }
+
+  .card-text {
+    padding: 5px !important; /* Reduced padding around text */
+    font-size: 12px !important; /* Smaller font size for text */
+  }
+}

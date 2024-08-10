@@ -1,0 +1,302 @@
+/* General Styles for Full Height and Overflow Management */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+ion-content {
+  overflow: auto; /* Ensure scroll is enabled */
+}
+
+.main-container {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important; /* Ensure minimum height is equal to viewport height */
+  padding-bottom: 70px !important; /* Adjust spacing for footer */
+  box-sizing: border-box !important;
+}
+
+footer {
+  margin-top: auto !important; /* Push footer to the bottom of the container */
+}
+
+/* Image Styles */
+.image-container ion-img {
+  max-width: 100% !important; /* Max width of image */
+  max-height: 50% !important; /* Auto-adjust height */
+}
+
+/* Title Styles */
+ion-toolbar ion-title,
+ion-title {
+  color: #B95CF4 !important; /* Purple color */
+}
+
+
+/* Card Title Styles */
+.custom-card-title-center {
+  text-align: center !important; /* Center align */
+  font-size: 32px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: -30px;
+}
+
+/* Category Selector Styles */
+.category-selector {
+  height: 400px;
+  margin-top: 20px !important; /* Add top margin */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0px 30px 30px 30px !important;
+  align-content: center;
+}
+
+.selector-label {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+}
+
+.selector-label span {
+  font-weight: bolder !important;
+  color: purple !important;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.selector-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 4 buttons per row */
+  gap: 30px 30px !important; /* Space between buttons */
+  justify-items: center !important;
+  width: 95% !important;
+  align-items: center;
+}
+
+.category-button {
+  background-color: white !important;
+  border: 2px solid purple !important;
+  border-radius: 10px !important;
+  padding: 10px 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Align items to the center vertically */
+  text-align: center !important; /* Align text to the center */
+  position: relative !important;
+  font-size: 17px !important; /* Adjust font size if needed */
+  box-sizing: border-box !important;
+  font-weight: bold;
+  width: 100%; /* Take full width of the grid cell */
+}
+
+.category-button img {
+  width: 40px !important;
+  height: 45px !important;
+  position: absolute !important;
+  top: -25px !important; /* Position image above the button */
+  left: -10px;
+  border-radius: 50% !important; /* Make image circular */
+}
+
+.category-button span {
+  margin-top: 30px !important; /* Add space for the image */
+}
+
+.category-button:hover {
+  background-color: purple !important;
+  color: white !important;
+}
+
+.search-icon {
+  color: purple !important;
+  font-size: 20px !important;
+}
+
+.category-button img:hover {
+  background-color: white !important;
+  color: purple !important;
+}
+
+/* Card Container Styles */
+.card {
+  width: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px 50px 20px 50px;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.card-container-partner {
+  display: flex !important;
+  justify-content: space-around !important;
+  flex-wrap: wrap !important;
+  padding: 10px !important;
+}
+
+.square-card {
+  width: 18% !important; /* Set width to accommodate 3 cards per row */
+  padding: 20px !important;
+  margin-bottom: 20px !important; /* Add bottom margin */
+  border: 2px solid purple !important; /* Border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important; /* Rounded corners */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Hover Effect */
+.square-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* More intense shadow on hover */
+  border-color: #B95CF4 !important; /* Purple border on hover */
+  background-color: #f9f9f9 !important; /* Slight background color change on hover */
+}
+
+.card-text p {
+  font-size: 14px !important;
+  text-align: center !important;
+  color: #666 !important;
+}
+
+/* Long Card Styles */
+.long-card {
+  display: flex !important;
+  margin: 20px 10px !important; /* Increased margin to give more space around the card */
+  padding: 30px !important; /* Increased padding to make the card thicker */
+  border: 1px solid #ddd !important; /* Card border */
+  border-radius: 10px !important; /* Rounded corners */
+  background-color: white !important; /* Card background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Card shadow */
+}
+
+.card-img {
+  width: 40% !important; /* Image width */
+  object-fit: contain !important; /* Ensure the image covers the area */
+}
+
+.long-card-content {
+  padding: 10px !important; /* Padding for card content */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; /* Ensure content is spaced out */
+  width: 70% !important; /* Content width */
+}
+
+.long-card-text {
+  text-align: left !important; /* Left align text */
+}
+
+.long-card-text p {
+  font-size: 32px !important; /* Increased font size for better readability */
+  margin: 0 !important;
+  color: #333 !important;
+}
+
+.learn-more-button {
+  align-self: flex-end !important; /* Align button to the right */
+  margin-top: 20px !important; /* Add some margin on top */
+}
+
+.long-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* More intense shadow on hover */
+  border-color: #B95CF4 !important; /* Purple border on hover */
+  background-color: #f9f9f9 !important; /* Slight background color change on hover */
+}
+
+/* Fab Button Styles */
+ion-fab-button {
+  --background: purple !important;
+}
+
+ion-fab-button ion-icon {
+  font-size: 24px !important;
+}
+
+/* Donation Card Styles */
+.donation-card {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 50px !important;
+  width: 200px !important;
+  padding: 20px !important;
+  background-color: white !important;
+  border: 2px solid purple !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  z-index: 1000 !important;
+  display: none !important; /* Initially hidden */
+}
+
+.donation-card.visible {
+  display: block !important; /* Show when visible class is added */
+}
+
+.donation-card .card-text {
+  text-align: center !important;
+  font-size: 16px !important;
+  color: #333 !important;
+  margin-bottom: 10px !important;
+}
+
+.donation-card .donation-button {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.donation-card .donation-button ion-button {
+  --background: purple !important;
+  color: white !important;
+  border-radius: 10px !important;
+  width: 100% !important;
+}
+
+/* Donation Button Styles */
+.donation-button {
+  position: fixed !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  background-color: rgb(50, 185, 9) !important;
+  color: white !important;
+  padding: 10px 15px !important;
+  border-radius: 0 10px 10px 0 !important;
+  z-index: 1000 !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  opacity: 1 !important;
+  transition: opacity 0.3s !important;
+}
+
+.donation-button:hover {
+  opacity: 0.7 !important; /* Fade effect on hover */
+}
+
+/* Animation */
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 1 !important;
+  }
+
+  50% {
+    opacity: 0.5 !important;
+  }
+}
+
+.donation-button.animate {
+  animation: fadeInOut 1.5s infinite !important;
+}

@@ -1,0 +1,22 @@
+<div class="image-container">
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide" *ngFor="let image of images">
+        <img [src]="image" alt="Slide">
+      </div>
+    </div>
+    <!-- Custom pagination dots -->
+    <div class="dots">
+      <span *ngFor="let dot of images; let i = index"
+        class="dot"
+        [class.active]="i === currentSlideIndex"
+        (click)="goToSlide(i)">
+      </span>
+    </div>
+    <!-- Custom navigation buttons -->
+    <div class="swiper-buttons">
+      <button class="swiper-button-prev" (click)="previousSlide()">&#10094;</button>
+      <button class="swiper-button-next" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</div>

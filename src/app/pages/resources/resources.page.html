@@ -1,0 +1,89 @@
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header">
+    <app-header></app-header>
+    <div class="image-container">
+    </div>
+  </div>
+
+  <div class="cover">
+    <app-cover-picture [imageUrl]="'../../../assets/images/Lib and resources Grey Background.png'"
+      [altText]="'resource-cover'"></app-cover-picture>
+  </div>
+
+  <div class="resource-page-container">
+    <!-- Card Section -->
+    <div class="card">
+      <div class="card-body">
+              <div class="resources-section">
+                 <h2>Library & Resources</h2>
+                <!-- Card 1 -->
+                <div class="square-card" (click)="navigateTo('resource1')">
+                  <div class="card-content">
+                    <img src="../../../assets/images/Doctors card.png" alt="Resource 1">
+                    <div class="card-text">
+                      <p>Doctors</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="square-card" (click)="navigateTo('resource2')">
+                  <div class="card-content">
+                    <img src="../../../assets/images/Dietician card.png" alt="Resource 2">
+                    <div class="card-text">
+                      <p>Dietitians</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="square-card" (click)="navigateTo('resource3')">
+                  <div class="card-content">
+                    <img src="../../../assets/images/Doctors card.png" alt="Resource 3">
+                    <div class="card-text">
+                      <p>Organizations</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="square-card" (click)="navigateTo('resource4')">
+                  <div class="card-content">
+                    <img src="../../../assets/images/Articles card.png" alt="Resource 4">
+                    <div class="card-text">
+                      <p>Articles</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="square-card" (click)="navigateTo('resource5')">
+                  <div class="card-content">
+                    <img src="../../../assets/images/toilet navigator card.png" alt="Resource 5">
+                    <div class="card-text">
+                      <p>Toilet Navigator</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="square-card" (click)="navigateTo('resource6')">
+                  <div class="card-content">
+                    <img src="../../../assets/images/Lib and resources with background.png" alt="Resource 6">
+                    <div class="card-text">
+                      <p>Managing IBD</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+
+        <footer>
+          <app-footer></app-footer>
+        </footer>
+</ion-content>
