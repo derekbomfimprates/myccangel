@@ -1,10 +1,13 @@
-<ion-content fullscreen="true">
-  <ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header">
     <app-header></app-header>
-  </ion-header>
+    <div class="image-container">
+    </div>
+  </div>
 
-  <div class="title-welcome">
-    <ion-card-title class="custom-spinner welcome-title">Welcome to MyCCAngel</ion-card-title>
+  <div class="cover">
+    <app-cover-picture [imageUrl]="'assets/images/registration_form.png'"
+      [altText]="'resource-cover'"></app-cover-picture>
   </div>
 
   <ion-grid class="flex-center">
@@ -20,7 +23,7 @@
                 <label for="tab-2" class="tab">Sign Up</label>
                 <div class="login-form">
                   <!-- Sign In Form -->
-                  <form [formGroup]="loginForm">
+                  <form [formGroup]="loginForm" class="form" id="login-form">
                     <div class="group">
                       <ion-item>
                         <ion-label position="floating">Email Address</ion-label>
@@ -43,7 +46,7 @@
                   </form>
 
                   <!-- Sign Up Form -->
-                  <form [formGroup]="signupForm">
+                  <form [formGroup]="signupForm" class="form" id="signup-form">
                     <div class="group">
                       <ion-item>
                         <ion-label position="floating">Name</ion-label>
@@ -76,9 +79,9 @@
                       <label for="tab-1">Already a Member?</label>
                     </div>
                   </form>
-                  </div>
                 </div>
               </div>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>

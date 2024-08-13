@@ -165,8 +165,11 @@ ion-back-button {
   justify-content: center !important;
   background-color: #ead0f9  !important;
   padding: 10px 0 !important;
+  cursor: pointer;
 }
-
+.header-logo.clickable {
+  cursor: pointer;
+}
 .menu-selector ul {
   list-style-type: none !important;
   margin: 0 !important;
