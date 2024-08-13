@@ -42,7 +42,8 @@ ion-chip {
   width: auto;
   border-radius: 20px;
   height: auto;
-  padding-top: 50%;}
+  padding-top: 50%;
+}
 
 .chat-main {
   width: 70%;
@@ -117,21 +118,69 @@ ion-chip {
   background-color: #B95CF4;
   color: #fff;
 }
-.full-card{
+
+.full-card {
   align-items: center;
 }
+
+/* Mobile-specific styles */
 @media only screen and (max-width: 800px) {
+  ion-content {
+    padding: 10px; /* Add padding for mobile responsiveness */
+  }
+
+  .cover {
+    padding-top: 10px; /* Reduce padding for mobile */
+  }
+
   .chat-wrap {
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically on mobile */
+    height: auto; /* Adjust height for mobile */
   }
 
   .chat-sidebar {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px; /* Space below sidebar */
+    padding-top: 0; /* Remove top padding */
+  }
 
+  .chat-sidebar img {
+    padding-top: 0; /* Remove top padding for image */
+    max-width: 50%; /* Scale down image */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
   }
 
   .chat-main {
-    width: 100%;
+    width: 100%; /* Full width on mobile */
+  }
+
+  .chat-messages {
+    padding: 10px; /* Reduce padding for mobile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+    max-height: 300px; /* Limit height for better fit on small screens */
+    overflow-y: auto;
+  }
+
+  .chat-avatar {
+    width: 30px; /* Reduce avatar size */
+    height: 30px;
+    margin: 0 5px;
+  }
+
+  .chat-bubble {
+    max-width: 80%; /* Allow bubbles to expand more on mobile */
+    padding: 8px; /* Reduce padding */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .chat-input ion-input {
+    margin-right: 5px; /* Reduce margin between input and button */
+  }
+
+  .chat-input ion-button {
+    font-size: 14px; /* Reduce font size */
+    padding: 8px 16px; /* Reduce padding */
   }
 }

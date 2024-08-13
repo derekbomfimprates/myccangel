@@ -245,3 +245,77 @@ ion-chip {
 .donation-button.visible {
   opacity: 1;
 }
+
+/* Mobile Styles */
+
+@media only screen and (max-width: 600px) {
+  /* Header Adjustments */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1%;
+  }
+
+  .header .avatar {
+    width: 150px;
+    height: 150px;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .avatar img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+  }
+
+  .header .name-info {
+    margin-left: 0;
+    margin-top: 0.5em;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .header .stats {
+    margin-left: 0;
+    margin-top: 0.5em;
+    text-align: center;
+  }
+
+  /* Adjustments for cover image to ensure it doesn’t overlap */
+  app-cover-picture {
+    display: block; /* Ensures cover picture is block level */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Adjust margin to fit well */
+  }
+
+  /* Adjustments for card-body and about-ibd-section */
+  .card-body {
+    padding: 20px; /* Reduce padding on mobile */
+  }
+
+  .about-ibd-section {
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid #B95CF4; /* Reduced border thickness */
+    border-radius: 10px; /* Reduced border radius */
+    font-size: 16px; /* Reduced font size */
+  }
+
+  .about-ibd-section h2 {
+    font-size: 24px; /* Reduced font size */
+    margin-bottom: 15px; /* Adjusted margin */
+  }
+
+  .about-ibd-section p {
+    font-size: 14px; /* Reduced font size */
+    margin-bottom: 15px; /* Adjusted margin */
+  }
+}

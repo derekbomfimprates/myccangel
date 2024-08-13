@@ -266,7 +266,7 @@ ion-back-button {
   }
 
   ion-menu-button {
-    display: none !important; /* Hide the menu button on mobile devices */
+    display: inline-block !important; /* Show the menu button on mobile devices */
   }
 
   /* Adjust Image Container for Mobile */
@@ -345,35 +345,29 @@ ion-back-button {
     display: none;
   }
 
+  /* Menu Container Adjustments for Mobile */
   .menu-container {
-    display: none !important; /* Hide menu on mobile devices */
     width: 100% !important;
+    padding-bottom: 5px;
   }
 
+  /* Menu Selector Adjustments for Mobile */
   .menu-selector {
-    display: none !important; /* Hide menu on mobile devices */
-    justify-content: center !important;
-    background-color: #B95CF4 !important;
-    padding: 5px 0 !important; /* Adjust padding for mobile */
+    padding: 5px 0 !important; /* Smaller padding for mobile */
+    background-color: #B95CF4 !important; /* Maintain background color */
   }
 
   .menu-selector ul {
-    list-style-type: none !important;
-    margin: 0 !important;
     padding: 0 !important;
-    display: flex !important;
     justify-content: center !important;
   }
 
   .menu-selector li {
-    margin: 0 10px !important; /* Adjust margin for mobile */
+    margin: 0 5px !important; /* Reduce margin between menu items */
   }
 
   .menu-selector a {
-    text-decoration: none !important;
-    color: #333 !important;
-    font-weight: bold !important;
-    font-size: 16px !important; /* Adjust font size for mobile */
+    font-size: 10px !important; /* Smaller font size for mobile */
   }
 
   .menu-selector a:hover {

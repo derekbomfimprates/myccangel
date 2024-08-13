@@ -33,7 +33,6 @@ ion-title {
   color: #B95CF4 !important; /* Purple color */
 }
 
-
 /* Card Title Styles */
 .custom-card-title-center {
   text-align: center !important; /* Center align */
@@ -172,8 +171,8 @@ ion-title {
 /* Long Card Styles */
 .long-card {
   display: flex !important;
-  margin: 20px 10px !important; /* Increased margin to give more space around the card */
-  padding: 30px !important; /* Increased padding to make the card thicker */
+  margin: 10px 5px !important; /* Decreased margin to give less space around the card */
+  padding: 20px !important; /* Decreased padding to make the card more compact */
   border: 1px solid #ddd !important; /* Card border */
   border-radius: 10px !important; /* Rounded corners */
   background-color: white !important; /* Card background color */
@@ -181,7 +180,7 @@ ion-title {
 }
 
 .card-img {
-  width: 40% !important; /* Image width */
+  width: 30% !important; /* Image width */
   object-fit: contain !important; /* Ensure the image covers the area */
 }
 
@@ -198,14 +197,14 @@ ion-title {
 }
 
 .long-card-text p {
-  font-size: 32px !important; /* Increased font size for better readability */
+  font-size: 24px !important; /* Decreased font size for better readability on smaller screens */
   margin: 0 !important;
   color: #333 !important;
 }
 
 .learn-more-button {
   align-self: flex-end !important; /* Align button to the right */
-  margin-top: 20px !important; /* Add some margin on top */
+  margin-top: 10px !important; /* Reduced margin on top */
 }
 
 .long-card:hover {
@@ -276,27 +275,108 @@ ion-fab-button ion-icon {
   z-index: 1000 !important;
   cursor: pointer !important;
   font-size: 18px !important;
-  font-weight: bold !important;
-  opacity: 1 !important;
-  transition: opacity 0.3s !important;
 }
 
-.donation-button:hover {
-  opacity: 0.7 !important; /* Fade effect on hover */
-}
-
-/* Animation */
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 1 !important;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .custom-card-title-center {
+    font-size: 24px !important;
   }
 
-  50% {
-    opacity: 0.5 !important;
+  .category-selector {
+    margin-top: 20px !important;
+    padding: 0px 15px 15px 15px !important;
+  }
+
+  .selector-buttons {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 buttons per row */
+    gap: 20px 20px !important; /* Adjust spacing between buttons */
+  }
+
+  .square-card {
+    width: 45% !important; /* Set width to 2 cards per row */
+    margin-bottom: 20px !important;
+  }
+
+  .long-card {
+    flex-direction: column !important; /* Stack image and content vertically */
+    align-items: center !important;
+    padding: 15px !important; /* Decrease padding */
+    margin: 10px !important;
+  }
+
+  .card-img {
+    width: 100% !important; /* Make image take full width */
+    margin-bottom: 10px !important; /* Add space below the image */
+  }
+
+  .long-card-content {
+    width: 100% !important; /* Make content take full width */
+    padding: 0 !important; /* Decrease padding */
+  }
+
+  .long-card-text p {
+    font-size: 18px !important; /* Decrease font size for readability */
+  }
+
+  .learn-more-button {
+    width: 100% !important; /* Make button take full width */
+    margin-top: 10px !important;
+  }
+
+  .donation-card {
+    width: 150px !important;
+    padding: 10px !important;
   }
 }
 
-.donation-button.animate {
-  animation: fadeInOut 1.5s infinite !important;
+@media (max-width: 768px) {
+  .custom-card-title-center {
+    font-size: 24px !important;
+  }
+
+  .category-selector {
+    margin-top: 20px !important;
+    padding: 0px 15px 15px 15px !important;
+  }
+
+  .selector-buttons {
+    display: none !important; /* Hide the buttons on phones */
+  }
+
+  .square-card {
+    width: 45% !important; /* Set width to 2 cards per row */
+    margin-bottom: 20px !important;
+  }
+
+  .long-card {
+    flex-direction: column !important; /* Stack image and content vertically */
+    align-items: center !important;
+    padding: 15px !important; /* Decrease padding */
+    margin: 10px !important;
+  }
+
+  .card-img {
+    width: 100% !important; /* Make image take full width */
+    margin-bottom: 10px !important; /* Add space below the image */
+  }
+
+  .long-card-content {
+    width: 100% !important; /* Make content take full width */
+    padding: 0 !important; /* Decrease padding */
+  }
+
+  .long-card-text p {
+    font-size: 18px !important; /* Decrease font size for readability */
+  }
+
+  .learn-more-button {
+    width: 100% !important; /* Make button take full width */
+    margin-top: 10px !important;
+  }
+
+  .donation-card {
+    width: 150px !important;
+    padding: 10px !important;
+  }
 }

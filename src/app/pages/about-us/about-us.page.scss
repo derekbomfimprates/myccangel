@@ -1,7 +1,15 @@
+/* Cover Picture Styles */
+.cover {
+  position: relative; // Ensure it's positioned relative to control z-index
+  z-index: 5; // Make sure it's below the header
+}
+
 .header {
   align-items: center;
   padding-bottom: 1%;
   flex-direction: row;
+  position: relative; // Ensure the header is positioned correctly
+  z-index: 10; // Make sure header is on top of other elements but below the cover image
 }
 
 .edit-button {
@@ -9,6 +17,7 @@
   top: 10px;
   right: 10px;
   color: #000000;
+  z-index: 20; // Ensure it is above other elements within the header
 }
 
 .menu-button {
@@ -52,53 +61,85 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 15; // Ensure it is above other content, including the cover image
   }
 
   .header .avatar {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     margin-top: 1em;
     margin-left: 0;
     margin-bottom: 0;
-    display: flex;
-    justify-content: center;
   }
 
   .header .avatar img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
 
   .header .name-info {
     margin-left: 0;
     margin-top: 0.5em;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
   }
 
   .header .stats {
     margin-left: 0;
     margin-top: 0.5em;
+    font-size: 12px;
     text-align: center;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .media-card {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .custom-card-title, .custom-card-title-center {
+    padding: 4px 8px;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-us-section {
+    margin: 15px;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .about-us-section h2 {
+    font-size: 24px;
+  }
+
+  .about-us-section ul li {
+    font-size: 14px;
   }
 }
 
 ion-content {
-  --background: url("https://t3.ftcdn.net/jpg/00/94/25/52/360_F_94255289_bLOLo8dVkESH4wP4QNVUg4hWBlcBEEOg.jpg") no-repeat top center/cover fixed, #fff;
+  --background:  #fff;
   height: auto;
   min-height: 100vh;
   width: 100%;
+  position: relative; // Position relative to control stacking context
+  z-index: 1; // Ensure it is below the header and cover picture
 }
 
 ion-toolbar {
   --background: transparent;
+  position: relative; // Make sure toolbar stacks correctly
+  z-index: 20; // Ensure toolbar is above content but below header
 }
 
 ion-chip {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 200;
   color: #303940;
   background-color: transparent;
@@ -113,7 +154,7 @@ ion-chip {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 50px 70px;
+  padding: 30px;
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
@@ -121,9 +162,9 @@ ion-chip {
 
 .media-card {
   margin-top: 10px;
-  padding: 40px;
+  padding: 20px;
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
@@ -184,27 +225,27 @@ ion-chip {
 }
 
 .about-us-section {
-  margin: 30px;
-  padding: 30px;
-  border: 5px solid #B95CF4;
-  border-radius: 15px;
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid #B95CF4;
+  border-radius: 10px;
   background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: #303940;
   text-align: justify;
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .about-us-section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #B95CF4;
-  font-size: 38px;
+  font-size: 26px;
   font-weight: bolder;
 }
 
 .about-us-section p {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.6;
   text-align: justify;
 }
@@ -216,8 +257,9 @@ ion-chip {
 }
 
 .about-us-section ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-align: justify;
+  font-size: 14px;
 }
 
 .about-us-section ul li:before {
@@ -225,23 +267,19 @@ ion-chip {
   color: #B95CF4;
 }
 
+/* Donation Button Styles */
 .donation-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #B95CF4;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  position: fixed !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  background-color: rgb(50, 185, 9) !important;
+  color: white !important;
+  padding: 10px 15px !important;
+  border-radius: 0 10px 10px 0 !important;
   z-index: 1000 !important;
-}
-
-.donation-button.visible {
-  opacity: 1;
+  cursor: pointer !important;
+  font-size: 18px !important;
 }

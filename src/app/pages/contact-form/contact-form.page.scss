@@ -53,7 +53,7 @@ ion-chip {
   font-weight: bolder;
 }
 
-.contact-info p {
+contact-info p {
   margin-bottom: 20px;
   line-height: 1.6;
   font-size: 1.5em; /* Adjust font size */
@@ -121,29 +121,90 @@ button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   margin-left: 40%;
-
 }
 
 button[type="submit"]:hover {
   background-color: #9a48c0;
 }
 
+/* Mobile-specific styles */
 @media only screen and (max-width: 800px) {
+  ion-content {
+    padding: 10px; /* Add padding for mobile responsiveness */
+  }
+
+  ion-chip {
+    font-size: 24px; /* Reduce font size */
+  }
+
+  .cover {
+    padding-top: 10px; /* Reduce padding for mobile */
+  }
+
   .contact-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically on mobile */
     align-items: center;
+    margin: 20px; /* Reduce margins for mobile */
+    padding: 20px; /* Reduce padding for mobile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+  }
+
+  .card-body {
+    padding: 20px; /* Reduce padding for mobile */
   }
 
   .contact-info {
-    margin-right: 0;
     margin-bottom: 20px;
+  }
+
+  .contact-info h2 {
+    margin-bottom: 15px;
+    font-size: 2em; /* Reduce font size */
+  }
+
+  .contact-info p {
+    margin-bottom: 15px;
+    line-height: 1.4; /* Reduce line height */
+    font-size: 1.2em; /* Reduce font size */
   }
 
   .contact-form-card {
     width: 100%;
+    padding: 20px; /* Reduce padding for mobile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
   }
 
   .contact-form {
-    width: 100%;
+    max-width: 100%; /* Ensure full width on mobile */
+  }
+
+  .form-group {
+    margin-bottom: 10px; /* Reduce margin between form elements */
+  }
+
+  label {
+    margin-bottom: 3px; /* Reduce margin */
+  }
+
+  input,
+  textarea {
+    padding: 8px; /* Reduce padding */
+  }
+
+  input[type="number"],
+  input[type="text"],
+  input[type="email"] {
+    height: 30px; /* Reduce height */
+  }
+
+  textarea {
+    height: 80px; /* Reduce textarea height */
+  }
+
+  button[type="submit"] {
+    padding: 8px 16px; /* Reduce padding */
+    font-size: 14px; /* Reduce font size */
+    margin: 20px auto 0 auto; /* Center the button on mobile */
+    display: block;
   }
 }
