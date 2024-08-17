@@ -3,7 +3,7 @@
   max-width: 100%;
   overflow: hidden;
   height: 100vh; /* Define a fixed height for the carousel container */
-
+  margin-top: -45px;
   @media (max-width: 600px) {
     height: 30vh; /* Smaller height on small screens */
   }

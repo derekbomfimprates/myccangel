@@ -8,6 +8,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { ButtonsComponent } from '../components/buttons/buttons.component';
 import { ErrorMessageComponent } from '../components/error-message/error-message.component';
 import { CoverPictureComponent } from '../components/cover-picture/cover-picture.component';
+import { PasswordPopoverComponent } from '../components/password-popover/password-popover.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CoverPictureComponent } from '../components/cover-picture/cover-picture
     HeaderComponent,
     ButtonsComponent,
     ErrorMessageComponent,
-    CoverPictureComponent
+    CoverPictureComponent,
+    PasswordPopoverComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { CoverPictureComponent } from '../components/cover-picture/cover-picture
     HeaderComponent,
     ButtonsComponent,
     ErrorMessageComponent,
-    CoverPictureComponent
+    CoverPictureComponent,
+    PasswordPopoverComponent
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

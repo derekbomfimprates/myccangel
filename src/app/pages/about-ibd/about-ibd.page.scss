@@ -87,10 +87,10 @@
 }
 
 ion-content {
-  --background: url("https://t3.ftcdn.net/jpg/00/94/25/52/360_F_94255289_bLOLo8dVkESH4wP4QNVUg4hWBlcBEEOg.jpg") no-repeat top center/cover fixed, #fff;
-  height: auto;
-  min-height: 100vh;
+  --background: #fff;
+  height: 100%;
   width: 100%;
+  overflow-y: auto;
 }
 
 ion-toolbar {

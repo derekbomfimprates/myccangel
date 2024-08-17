@@ -1,18 +1,21 @@
-/* General Styles for Full Height and Overflow Management */
 html, body {
   margin: 0 !important;
   padding: 0 !important;
   height: 100% !important;
 }
 
+/* General Styles */
 ion-content {
-  overflow: auto; /* Ensure scroll is enabled */
+  --background: #fff;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .main-container {
   display: flex !important;
   flex-direction: column !important;
-  min-height: 100vh !important; /* Ensure minimum height is equal to viewport height */
+  min-height: 100vh !important;
   padding-bottom: 70px !important; /* Adjust spacing for footer */
   box-sizing: border-box !important;
 }
@@ -30,28 +33,17 @@ footer {
 /* Title Styles */
 ion-toolbar ion-title,
 ion-title {
-  color: #B95CF4 !important; /* Purple color */
-}
-
-/* Card Title Styles */
-.custom-card-title-center {
-  text-align: center !important; /* Center align */
-  font-size: 32px;
-  font-weight: bold;
-  padding-bottom: 20px;
-  padding-top: -30px;
+  color: #513894 !important; /* Purple color */
 }
 
 /* Category Selector Styles */
 .category-selector {
-  height: 400px;
-  margin-top: 20px !important; /* Add top margin */
+  margin-top: 20px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 0px 30px 30px 30px !important;
-  align-content: center;
 }
 
 .selector-label {
@@ -62,11 +54,12 @@ ion-title {
 
 .selector-label span {
   font-weight: bolder !important;
-  color: purple !important;
+  color: #513894 !important;
   font-size: 25px;
-  padding-bottom: 20px;
+  padding-bottom: 10%;
 }
 
+/* Adjusting Grid Layout for the Concerns */
 .selector-buttons {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important; /* 4 buttons per row */
@@ -76,107 +69,69 @@ ion-title {
   align-items: center;
 }
 
+/* Concern Button Styling */
 .category-button {
-  background-color: white !important;
-  border: 2px solid purple !important;
-  border-radius: 10px !important;
-  padding: 10px 10px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important; /* Align items to the center vertically */
-  text-align: center !important; /* Align text to the center */
-  position: relative !important;
-  font-size: 17px !important; /* Adjust font size if needed */
-  box-sizing: border-box !important;
-  font-weight: bold;
-  width: 100%; /* Take full width of the grid cell */
-}
-
-.category-button img {
-  width: 40px !important;
-  height: 45px !important;
-  position: absolute !important;
-  top: -25px !important; /* Position image above the button */
-  left: -10px;
-  border-radius: 50% !important; /* Make image circular */
-}
-
-.category-button span {
-  margin-top: 30px !important; /* Add space for the image */
-}
-
-.category-button:hover {
-  background-color: purple !important;
-  color: white !important;
-}
-
-.search-icon {
-  color: purple !important;
-  font-size: 20px !important;
-}
-
-.category-button img:hover {
-  background-color: white !important;
-  color: purple !important;
-}
-
-/* Card Container Styles */
-.card {
-  width: 100%;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  padding: 20px 50px 20px 50px;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
-}
-
-.card-container-partner {
-  display: flex !important;
-  justify-content: space-around !important;
-  flex-wrap: wrap !important;
-  padding: 10px !important;
-}
-
-.square-card {
-  width: 18% !important; /* Set width to accommodate 3 cards per row */
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 50% !important;
   padding: 20px !important;
-  margin-bottom: 20px !important; /* Add bottom margin */
-  border: 2px solid purple !important; /* Border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 10px !important; /* Rounded corners */
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
   align-items: center !important;
-}
-
-/* Hover Effect */
-.square-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* More intense shadow on hover */
-  border-color: #B95CF4 !important; /* Purple border on hover */
-  background-color: #f9f9f9 !important; /* Slight background color change on hover */
-}
-
-.card-text p {
-  font-size: 14px !important;
+  justify-content: center !important;
   text-align: center !important;
-  color: #666 !important;
+  font-size: 12px !important;
+
+  color: #513894 !important;
+  width: 120px !important;
+  height: 120px !important; /* More uniform circle size */
+  transition: transform 0.3s ease !important;
+}
+
+/* Image Positioning Inside the Buttons */
+.category-button img {
+  width: 70px !important;
+  height: 70px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Adding Hover Effects */
+.category-button:hover {
+  background-color: #E0E0FF !important; /* Slightly darker purple on hover */
+  transform: scale(1.1) !important; /* Scale up the button on hover */
+}
+
+/* View Recommendations Button */
+.view-recommendations-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.view-recommendations-button {
+  --background: #513894;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Search Icon */
+.search-icon {
+  color: #513894 !important;
+  font-size: 20px !important;
 }
 
 /* Long Card Styles */
 .long-card {
   display: flex !important;
-  margin: 10px 5px !important; /* Decreased margin to give less space around the card */
-  padding: 20px !important; /* Decreased padding to make the card more compact */
-  border: 1px solid #ddd !important; /* Card border */
-  border-radius: 10px !important; /* Rounded corners */
-  background-color: white !important; /* Card background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Card shadow */
+  margin: 10px 5px !important;
+  padding: 20px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 10px !important;
+  background-color: white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
 .card-img {
@@ -185,28 +140,19 @@ ion-title {
 }
 
 .long-card-content {
-  padding: 10px !important; /* Padding for card content */
+  padding: 10px !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important; /* Ensure content is spaced out */
+  justify-content: space-between !important;
   width: 70% !important; /* Content width */
 }
 
-.long-card-text {
-  text-align: left !important; /* Left align text */
-}
-
 .long-card-text p {
-  font-size: 24px !important; /* Decreased font size for better readability on smaller screens */
-  margin: 0 !important;
-  color: #333 !important;
+  font-size: 24px !important;
+  color: #513894 !important;
 }
 
-.learn-more-button {
-  align-self: flex-end !important; /* Align button to the right */
-  margin-top: 10px !important; /* Reduced margin on top */
-}
-
+/* Hover Effect for Long Cards */
 .long-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* More intense shadow on hover */
   border-color: #B95CF4 !important; /* Purple border on hover */
@@ -222,44 +168,39 @@ ion-fab-button ion-icon {
   font-size: 24px !important;
 }
 
-/* Donation Card Styles */
-.donation-card {
-  position: fixed !important;
-  right: 20px !important;
-  bottom: 50px !important;
-  width: 200px !important;
-  padding: 20px !important;
-  background-color: white !important;
-  border: 2px solid purple !important;
-  border-radius: 10px !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-  z-index: 1000 !important;
-  display: none !important; /* Initially hidden */
-}
-
-.donation-card.visible {
-  display: block !important; /* Show when visible class is added */
-}
-
-.donation-card .card-text {
-  text-align: center !important;
-  font-size: 16px !important;
-  color: #333 !important;
-  margin-bottom: 10px !important;
-}
-
-.donation-card .donation-button {
+/* Partner Cards */
+.card-container-partner {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: space-around !important;
+  flex-wrap: wrap !important;
+  padding: 10px !important;
 }
 
-.donation-card .donation-button ion-button {
-  --background: purple !important;
-  color: white !important;
+.square-card {
+  width: 18% !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+  border: 2px solid purple !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
   border-radius: 10px !important;
-  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
+.square-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+  border-color: #B95CF4 !important;
+  background-color: #f9f9f9 !important;
+}
+.custom-card-title-center{
+  font-weight: bolder !important;
+  color: #513894 !important;
+  font-size: 32px;
+  padding-bottom: 20%;
+
+}
 /* Donation Button Styles */
 .donation-button {
   position: fixed !important;
@@ -267,13 +208,11 @@ ion-fab-button ion-icon {
   top: 50% !important;
   transform: translateY(-50%) !important;
   writing-mode: vertical-rl !important;
-  text-orientation: mixed !important;
   background-color: rgb(50, 185, 9) !important;
   color: white !important;
   padding: 10px 15px !important;
   border-radius: 0 10px 10px 0 !important;
   z-index: 1000 !important;
-  cursor: pointer !important;
   font-size: 18px !important;
 }
 
@@ -299,84 +238,28 @@ ion-fab-button ion-icon {
   }
 
   .long-card {
-    flex-direction: column !important; /* Stack image and content vertically */
+    flex-direction: column !important;
     align-items: center !important;
-    padding: 15px !important; /* Decrease padding */
+    padding: 15px !important;
     margin: 10px !important;
   }
 
   .card-img {
-    width: 100% !important; /* Make image take full width */
-    margin-bottom: 10px !important; /* Add space below the image */
+    width: 100% !important;
+    margin-bottom: 10px !important;
   }
 
   .long-card-content {
-    width: 100% !important; /* Make content take full width */
-    padding: 0 !important; /* Decrease padding */
+    width: 100% !important;
+    padding: 0 !important;
   }
 
   .long-card-text p {
-    font-size: 18px !important; /* Decrease font size for readability */
+    font-size: 18px !important;
   }
 
   .learn-more-button {
-    width: 100% !important; /* Make button take full width */
+    width: 100% !important;
     margin-top: 10px !important;
-  }
-
-  .donation-card {
-    width: 150px !important;
-    padding: 10px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .custom-card-title-center {
-    font-size: 24px !important;
-  }
-
-  .category-selector {
-    margin-top: 20px !important;
-    padding: 0px 15px 15px 15px !important;
-  }
-
-  .selector-buttons {
-    display: none !important; /* Hide the buttons on phones */
-  }
-
-  .square-card {
-    width: 45% !important; /* Set width to 2 cards per row */
-    margin-bottom: 20px !important;
-  }
-
-  .long-card {
-    flex-direction: column !important; /* Stack image and content vertically */
-    align-items: center !important;
-    padding: 15px !important; /* Decrease padding */
-    margin: 10px !important;
-  }
-
-  .card-img {
-    width: 100% !important; /* Make image take full width */
-    margin-bottom: 10px !important; /* Add space below the image */
-  }
-
-  .long-card-content {
-    width: 100% !important; /* Make content take full width */
-    padding: 0 !important; /* Decrease padding */
-  }
-
-  .long-card-text p {
-    font-size: 18px !important; /* Decrease font size for readability */
-  }
-
-  .learn-more-button {
-    width: 100% !important; /* Make button take full width */
-    margin-top: 10px !important;
-  }
-
-  .donation-card {
-    width: 150px !important;
-    padding: 10px !important;
   }
 }

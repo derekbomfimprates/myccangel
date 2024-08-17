@@ -86,4 +86,7 @@ export class HeaderComponent implements OnInit {
       changeWord();
     }
   }
+  isHomePage(): boolean {
+    return this.router.url === '/home';  // Adjust if your home route is different
+  }
 }
