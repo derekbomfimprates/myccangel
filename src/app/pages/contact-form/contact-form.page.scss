@@ -1,62 +1,42 @@
-/* General Styles */
-ion-content {
-  --background: #fff;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-}
-
-ion-toolbar {
-  --background: transparent;
-}
-
-ion-chip {
-  font-size: 30px;
-  font-weight: 200;
-  color: #303940;
-  background-color: transparent;
-}
-
-.cover {
-  padding-top: 20px;
-}
-
+/* Updated Styles */
 .contact-container {
   display: flex;
   justify-content: space-between;
   margin: 40px;
   padding: 40px;
-  border: none;
-  border-radius: 15px;
-  background-color: #f8f1fc;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: none; /* Remove border */
+  border-radius: 15px; /* Retain border radius */
+  background-color: transparent; /* Make background transparent */
+  box-shadow: none; /* Remove shadow */
   color: #303940;
 }
 
 .card-body {
   padding: 30px 40px;
+  border: none; /* Remove border */
+  background-color: transparent; /* Make background transparent */
 }
 
 .contact-info {
   flex: 1;
   margin-right: 20px;
-  text-align: center; /* Center align text */
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
 }
 
 .contact-info h2 {
-  margin-bottom: 20px;
-  color: #B95CF4;
-  font-size: 3em; /* Adjust font size */
-  font-weight: bolder;
+  margin-bottom: 5px;
+  color: #33265E;
+  font-size: 3em;
+  font-weight: bold;
 }
 
-contact-info p {
+.contact-info p {
   margin-bottom: 20px;
   line-height: 1.6;
-  font-size: 1.5em; /* Adjust font size */
+  font-size: 1.5em;
 }
 
 .contact-form-card {
@@ -64,18 +44,22 @@ contact-info p {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px; /* Increase padding for larger card */
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* Retain padding */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Retain border radius */
+  background-color: transparent; /* Make background transparent */
+  box-shadow: none; /* Remove shadow */
 }
 
 .contact-form {
   width: 100%;
   max-width: 400px;
 }
-
+.contact-info img {
+  max-width: 50%; /* Set a max-width to make the image smaller */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 90px;
+}
 .contact-form form {
   margin: 0;
 }
@@ -115,7 +99,7 @@ textarea {
 button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #B95CF4;
+  background-color: #33265E;
   color: white;
   border: none;
   border-radius: 5px;
@@ -130,27 +114,29 @@ button[type="submit"]:hover {
 /* Mobile-specific styles */
 @media only screen and (max-width: 800px) {
   ion-content {
-    padding: 10px; /* Add padding for mobile responsiveness */
+    padding: 10px;
   }
 
   ion-chip {
-    font-size: 24px; /* Reduce font size */
+    font-size: 24px;
   }
 
   .cover {
-    padding-top: 10px; /* Reduce padding for mobile */
+    padding-top: 10px;
   }
 
   .contact-container {
-    flex-direction: column; /* Stack elements vertically on mobile */
+    flex-direction: column;
     align-items: center;
-    margin: 20px; /* Reduce margins for mobile */
-    padding: 20px; /* Reduce padding for mobile */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+    margin: 20px;
+    padding: 20px;
+    box-shadow: none; /* Remove shadow for mobile */
   }
 
   .card-body {
-    padding: 20px; /* Reduce padding for mobile */
+    padding: 20px;
+    border: none; /* Remove border */
+    background-color: transparent; /* Make background transparent */
   }
 
   .contact-info {
@@ -159,52 +145,52 @@ button[type="submit"]:hover {
 
   .contact-info h2 {
     margin-bottom: 15px;
-    font-size: 2em; /* Reduce font size */
+    font-size: 2em;
   }
 
   .contact-info p {
     margin-bottom: 15px;
-    line-height: 1.4; /* Reduce line height */
-    font-size: 1.2em; /* Reduce font size */
+    line-height: 1.4;
+    font-size: 1.2em;
   }
 
   .contact-form-card {
     width: 100%;
-    padding: 20px; /* Reduce padding for mobile */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+    padding: 20px;
+    box-shadow: none; /* Remove shadow for mobile */
   }
 
   .contact-form {
-    max-width: 100%; /* Ensure full width on mobile */
+    max-width: 100%;
   }
 
   .form-group {
-    margin-bottom: 10px; /* Reduce margin between form elements */
+    margin-bottom: 10px;
   }
 
   label {
-    margin-bottom: 3px; /* Reduce margin */
+    margin-bottom: 3px;
   }
 
   input,
   textarea {
-    padding: 8px; /* Reduce padding */
+    padding: 8px;
   }
 
   input[type="number"],
   input[type="text"],
   input[type="email"] {
-    height: 30px; /* Reduce height */
+    height: 30px;
   }
 
   textarea {
-    height: 80px; /* Reduce textarea height */
+    height: 80px;
   }
 
   button[type="submit"] {
-    padding: 8px 16px; /* Reduce padding */
-    font-size: 14px; /* Reduce font size */
-    margin: 20px auto 0 auto; /* Center the button on mobile */
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 20px auto 0 auto;
     display: block;
   }
 }

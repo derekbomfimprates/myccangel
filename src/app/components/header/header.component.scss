@@ -52,7 +52,6 @@ ion-fab-button:hover::after {
   border-radius: 4px;
   white-space: nowrap;
   font-size: 14px;
-  z-index: 1000;
 }
 
 ion-fab-button:hover::before {
@@ -64,7 +63,6 @@ ion-fab-button:hover::before {
   border-width: 5px;
   border-style: solid;
   border-color: #333 transparent transparent transparent;
-  z-index: 1000;
 }
 
 .login-button, .signIn-button {
@@ -245,7 +243,6 @@ ion-back-button {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  z-index: 1000;
   opacity: 1;
   transition: opacity 0.3s;
 }
@@ -299,7 +296,6 @@ ion-back-button {
     border-radius: 4px;
     white-space: nowrap;
     font-size: 12px; /* Adjusted font size for mobile */
-    z-index: 1000;
   }
 
   ion-fab-button:hover::before {
@@ -311,8 +307,7 @@ ion-back-button {
     border-width: 5px;
     border-style: solid;
     border-color: #333 transparent transparent transparent;
-    z-index: 1000;
-  }
+    }
 
   .login-button, .signIn-button {
     display: none !important; /* Hide login and sign-in buttons on mobile devices */

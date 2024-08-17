@@ -1,15 +1,10 @@
-/* Cover Picture Styles */
-.cover {
-  position: relative; // Ensure it's positioned relative to control z-index
-  z-index: 5; // Make sure it's below the header
-}
+
 
 .header {
   align-items: center;
   padding-bottom: 1%;
   flex-direction: row;
   position: relative; // Ensure the header is positioned correctly
-  z-index: 10; // Make sure header is on top of other elements but below the cover image
 }
 
 .edit-button {
@@ -17,7 +12,6 @@
   top: 10px;
   right: 10px;
   color: #000000;
-  z-index: 20; // Ensure it is above other elements within the header
 }
 
 .menu-button {
@@ -61,7 +55,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 15; // Ensure it is above other content, including the cover image
   }
 
   .header .avatar {
@@ -129,13 +122,12 @@ ion-content {
   min-height: 100vh;
   width: 100%;
   position: relative; // Position relative to control stacking context
-  z-index: 1; // Ensure it is below the header and cover picture
+
 }
 
 ion-toolbar {
   --background: transparent;
   position: relative; // Make sure toolbar stacks correctly
-  z-index: 20; // Ensure toolbar is above content but below header
 }
 
 ion-chip {
@@ -279,7 +271,7 @@ ion-chip {
   color: white !important;
   padding: 10px 15px !important;
   border-radius: 0 10px 10px 0 !important;
-  z-index: 1000 !important;
   cursor: pointer !important;
   font-size: 18px !important;
 }
+

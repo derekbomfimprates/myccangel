@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-swiper-card',
@@ -14,6 +15,7 @@ export class SwiperCardComponent implements OnInit, OnDestroy {
 
   currentSlideIndex = 0;
   intervalId: any;
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.startAutoSlide();
@@ -21,6 +23,29 @@ export class SwiperCardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.stopAutoSlide();
+  }
+  contactForm() {
+    this.router.navigate(['contact-form']);
+  }
+
+  aboutUs() {
+    this.router.navigate(['about-us']);
+  }
+
+  aboutIbd() {
+    this.router.navigate(['about-ibd']);
+  }
+
+  home() {
+    this.router.navigate(['home']);
+  }
+
+  aiHelp() {
+    this.router.navigate(['ai-help']);
+  }
+
+  resources() {
+    this.router.navigate(['resources']);
   }
 
   startAutoSlide() {
