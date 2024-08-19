@@ -4,7 +4,9 @@ body {
   background: #c8c8c8;
   font: 600 16px/18px "Open Sans", sans-serif;
 }
-
+.card{
+  padding: 5%;
+}
 *,
 :after,
 :before {
@@ -29,19 +31,16 @@ a {
 
 .login-wrap {
   width: 100%;
-  margin: auto;
-  max-width: 525px;
-  min-height: 670px;
+
+  max-width: 2000px; /* Increased width for better image and form balance */
+  min-height: 500px;
   position: relative;
-  background: #ffffff;
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background: transparent;
   display: flex;
-  flex-direction: column;
-  margin-top: 30px; /* Adjust this value to move the card further down */
-  margin-bottom: 30px; /* Adjust this value to move the card further down */
-
-  border-radius: 20px !important; /* Adjust this value to change the roundness */
-
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px !important;
 }
 
 .login-html {
@@ -49,8 +48,44 @@ a {
   height: 100%;
   position: absolute;
   padding: 90px 70px 50px 70px;
-  background: #ffffff;
+  background: transparent;
+}
 
+/* Container for Image and Form inside the ion-card */
+.form-with-image {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+
+/* Left Image Column */
+.left-image {
+  flex: 0 0 350px; /* Increased size of image container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px; /* More space between image and form */
+  padding-left: 20px;
+}
+
+.left-image img {
+  width: 150%;
+  height: auto;
+}
+
+/* Right Form Column */
+.right-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.full-card {
+  width: 100%;
+  max-width: 750px; /* Adjusted form card width to accommodate larger image */
+  margin: 0 auto;
 }
 
 .login-html .sign-in-htm,
@@ -130,7 +165,7 @@ a {
   border: none;
   padding: 15px 20px;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent
 }
 
 .login-form .group .input {
@@ -152,18 +187,6 @@ a {
   color: #ffffff;
 }
 
-.login-html .sign-in:checked ~ .login-form .sign-in-htm {
-  opacity: 1;
-  visibility: visible;
-  transform: rotateY(0deg);
-}
-
-.login-html .sign-up:checked ~ .login-form .sign-up-htm {
-  opacity: 1;
-  visibility: visible;
-  transform: rotateY(0deg);
-}
-
 .hr {
   height: 2px;
   margin: 60px 0 50px 0;
@@ -179,17 +202,12 @@ a {
 }
 
 .full-card {
-  --background: #ffff;
+  --background: transparent;
   position: relative;
-  min-height: 400px; /* Adjust the minimum height as needed */
+  min-height: 400px;
   background-size: cover;
-  border-radius: 10px; /* Optional: Add border radius for the card */
-  overflow: hidden; /* Ensure the image doesn't overflow */
-
-}
-
-.image-column {
-  display: none !important; /* Hide image column */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .input-column {
@@ -197,8 +215,8 @@ a {
 }
 
 .welcome-title {
-  font-size: 40px !important; /* Increase the font size */
-  color: #B95CF4 !important; /* Change the color */
+  font-size: 40px !important;
+  color: #B95CF4 !important;
   font-weight: bold;
 }
 
@@ -207,30 +225,19 @@ a {
   padding: 20px;
 }
 
-.custom-spinner {
-  font-size: 24px;
-}
 
-footer {
-  text-align: center;
-  padding: 20px;
-}
 
-/* Add some base styling for ion-content to ensure it fits within the viewport */
 ion-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
+  --background: #fff;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
-/* Hide all forms by default */
 .form {
   display: none;
 }
 
-/* Show the form when its corresponding tab is selected */
 #tab-1:checked ~ .login-form #login-form,
 #tab-2:checked ~ .login-form #signup-form {
   display: block;
@@ -240,64 +247,71 @@ ion-content {
   cursor: pointer;
 }
 
-/* Style for the active tab */
 input[name="tab"]:checked + .tab {
   font-weight: bold;
-  color: #007bff; /* Adjust color as needed */
+  color: #007bff;
 }
 
-
-/* Cover Picture Styles */
-.cover {
-  padding-top: 20px;
-}
 /* Responsive Styles */
 @media (max-width: 600px) {
   .footer-nav {
-    display: none !important; /* Hide navigation links */
+    display: none !important;
   }
 
   .footer-socials {
-    flex-direction: row !important; /* Ensure social icons are in a row */
-    justify-content: center !important; /* Center align social icons */
-    padding: 0 10px; /* Padding to ensure content doesn't touch the edges */
+    flex-direction: row !important;
+    justify-content: center !important;
+    padding: 0 10px;
   }
 
   .footer-socials ion-button {
-    height: 40px !important; /* Ensure social buttons are easy to interact with */
+    height: 40px !important;
   }
 
   .footer-socials ion-icon {
-    font-size: 20px !important; /* Adjust icon size for smaller screens */
+    font-size: 20px !important;
   }
 
-  /* Small screen adjustments for login form */
   .input-column {
     width: 100% !important;
   }
 
   .login-html .tab {
-    font-size: 14px !important; /* Reduce font size of tabs */
+    font-size: 14px !important;
   }
 
   .sign-in-htm {
-    font-size: 10px !important; /* Reduce font size of tabs */
+    font-size: 10px !important;
   }
 
   .login-form .group .input,
   .login-form .group .button {
-    padding: 1px 2px !important; /* Reduce padding */
+    padding: 1px 2px !important;
   }
 
   .login-form .group .button {
-    font-size: 10px !important; /* Reduce button font size */
+    font-size: 10px !important;
   }
 
   ion-card-content {
-    padding: 5px !important; /* Reduce padding inside the card */
+    padding: 5px !important;
   }
 
   ion-card {
-    margin: 5px !important; /* Reduce margin around the card */
+    margin: 5px !important;
+  }
+
+  .form-with-image {
+    flex-direction: column;
+  }
+
+  .left-image {
+    padding-right: 0;
+    padding-bottom: 20px;
+    flex: none;
+  }
+
+  .right-form {
+    width: 100%;
   }
 }

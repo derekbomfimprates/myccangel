@@ -1,52 +1,8 @@
+/* General Styles */
 body {
   margin: 0;
-  color: #ffffff;
-  background: #c8c8c8;
+  background: transparent;
   font: 600 16px/18px "Open Sans", sans-serif;
-}
-/* Cover Picture Styles */
-.cover {
-  padding-top: 20px;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.image-container ion-img {
-  width: 100%;
-  max-width: 200px; /* Adjust the size of the image */
-  height: auto;
-  border-radius: 10px; /* Optional: Add some rounding */
-}
-ion-img {
-  width: 25%;
-  height: auto;
-  border-radius: 10px; /* Optional: Add some rounding */
-}
-*,
-:after,
-:before {
-  box-sizing: border-box;
-}
-
-.clearfix:after,
-.clearfix:before {
-  content: "";
-  display: table;
-}
-ion-card-content {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  max-height: 400px;
-}
-
-.clearfix:after {
-  clear: both;
-  display: block;
 }
 
 a {
@@ -54,103 +10,44 @@ a {
   text-decoration: none;
 }
 
-// Header styles
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Header Styles */
 ion-header {
   --background: transparent;
 }
-.card-contact{
-  height: 480px;
-}
 
-.full-card {
-  background-color: #ffffff !important;
+/* Card Styles */
+ion-card {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  width: 500px;
-  height: 500px;
-  margin: 10px auto;
+  background-color: transparent;
   padding: 20px;
 }
 
-.form-card {
-  background-color: #ffffff !important;
-  border-radius: 10px;
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  width: 600px;
-  height: 600px;
-  margin: 10px auto;
-  padding: 20px;
+ion-card-header,
+ion-card-content {
+  padding: 10px;
 }
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-}
-
-.title-welcome {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.welcome-title {
-  color: white !important;
-  font-size: 35px;
-}
-
-.navigation-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-
-}
-
-.custom-spinner {
-  display: flex;
-  justify-content: center;
-}
-
-.registerButton {
-  margin-top: -66px;
-  margin-left: 468px;
-
-}
-
-.custom-spinner .spinner-grow {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.custom-spinner .spinner-grow:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.custom-spinner .spinner-grow:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.custom-spinner .spinner-grow:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-ion-content {
-  --background: #fff;
-}
-ion-card-title{
+ion-card-title {
   color: #B95CF4;
   font-size: large;
   font-weight: bolder;
-
-
 }
+
 ion-card-title.custom-spinner {
   display: flex;
   justify-content: center;
@@ -164,22 +61,64 @@ ion-card-title.custom-spinner::after {
   display: block;
   width: 50px;
   height: 50px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
   border-top: 5px solid #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.navigation-buttons ion-button {
+/* Form Styles */
+ion-item {
+  display: flex;
+  align-items: center;
+}
+
+ion-input {
+  flex: 1;
+}
+
+.box-selector {
+  margin-left: 20px;
+}
+
+.checkbox-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.checkbox-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 48%;
+}
+
+.question-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.terms {
+  margin: 5% 40px;
+  text-align: justify;
+}
+
+ion-text {
+  font-size: large;
+  color: #000;
+  margin-right: 10%;
+  text-align: center;
+  padding: 10%;
+}
+
+/* Button Styles */
+ion-button {
   --background: #fff;
   --color: #000;
 }
@@ -189,56 +128,34 @@ ion-button.registerButton {
   --color: #fff;
 }
 
-.checkbox-grid {
+/* Navigation Buttons */
+.navigation-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-
 }
 
-.checkbox-column {
+.registerButton {
+  margin-top: 0;
+}
+
+/* Spinner Styles */
+.custom-spinner {
   display: flex;
-  flex-direction: column;
-  gap: 10%;
-  width: 48%;
-
-
+  justify-content: center;
 }
 
-.question-label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-ion-label{
-  margin-left: -200px;
-}
-ion-item {
-  display: flex;
-  align-items: center;
+.custom-spinner .spinner-grow {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
-.box-selector{
-  margin-left: 20px;
-  padding: 5%;
-}
+.custom-spinner .spinner-grow:nth-child(1) { animation-delay: 0.1s; }
+.custom-spinner .spinner-grow:nth-child(2) { animation-delay: 0.2s; }
+.custom-spinner .spinner-grow:nth-child(3) { animation-delay: 0.3s; }
 
-.terms{
-  margin-left: -440px;
-  text-align: justify;
-  margin-right: 40px;
-  margin-bottom: 5%;
-  margin-top: 5%;
-}
-ion-text {
-  font-size: large;
-  color: #000;
-  margin-right: 10%;
-  text-align: center;
-  padding: 10%;
-}
-
-
+/* Progress Bar */
 .progress-bar-container {
   display: flex;
   flex-direction: column;
@@ -252,16 +169,14 @@ ion-text {
   color: #000;
 }
 
-
+/* Medical Report Styles */
 .medical-report-container {
   text-align: center;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  margin: 20px;
+  margin: 20px auto;
   height: 400px;
+  background-color: transparent;
 }
 
 .title {
@@ -295,17 +210,17 @@ ion-text {
   display: block;
   margin-top: 10px;
 }
+
+/* Password Info */
 .password-info {
   position: fixed;
   top: 0;
   right: 0;
   width: 300px;
   height: 100%;
-  background: #f8f8f8;
   border-left: 1px solid #ddd;
   padding: 20px;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-  display: none; /* Initially hidden */
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -313,7 +228,7 @@ ion-text {
 }
 
 .password-info.show {
-  display: flex; /* Show only when active */
+  display: flex;
 }
 
 .password-info.hide {
@@ -332,12 +247,4 @@ ion-text {
 
 .password-info li {
   margin-bottom: 10px;
-}
-
-.password-info.show {
-  display: block;
-}
-
-.password-info.hide {
-  display: none;
 }

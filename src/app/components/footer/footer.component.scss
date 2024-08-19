@@ -1,6 +1,6 @@
 /* Footer Styles */
 ion-footer {
-  background-color: #f7f7f7 !important;
+  background-color: #ffff !important;
 }
 
 .footer-nav {
@@ -27,7 +27,9 @@ ion-footer {
   justify-content: center !important;
   gap: 20px !important; /* Space between social buttons */
 }
-
+.ion-justify-content-center{
+  color: #33265E;
+}
 .footer-socials ion-button {
   padding: 0 !important;
   --border-radius: 50% !important;

@@ -3,15 +3,18 @@
     <app-header></app-header>
   </ion-header>
 
-    <app-cover-picture [imageUrl]="'assets/images/registration_form.png'"
-      [altText]="'resource-cover'"></app-cover-picture>
+  <app-cover-picture [imageUrl]="'assets/images/registration_form.png'"
+    [altText]="'resource-cover'"></app-cover-picture>
 
 
   <ion-grid class="flex-center">
     <ion-row>
       <ion-col class="flex-center">
         <!-- Centering the form card within the column -->
-        <ion-card class="form-card">
+
+
+
+        <form [formGroup]="registerForm.getForm()">
 
           <!-- Progress Bar -->
           <div class="progress-bar-container">
@@ -19,372 +22,361 @@
             <div class="progress-bar-text">{{currentStep}} / 11</div>
           </div>
 
-          <form [formGroup]="registerForm.getForm()">
-            <div class="card-contact">
+          <!-- Step 1: Upload Medical Report -->
+          <ion-card *ngIf="currentStep === 1">
 
-              <!-- Step 1: Upload Medical Report -->
-              <ion-card *ngIf="currentStep === 1">
-
-                <div class="medical-report-container">
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                  <p class="description">Registration will only be completed with the submission of a medical report.
-                  </p>
-                  <input type="file" id="medicalReport" (change)="onFileSelected($event)" class="file-input">
-                  <label for="medicalReport" class="file-label">Choose File</label>
-                  <span class="file-chosen" *ngIf="selectedFile">{{ selectedFile.name }}</span>
-                </div>
-              </ion-card>
-
-              <!-- Step 2: Contact -->
-              <ion-card *ngIf="currentStep === 2">
-                <ion-card-header>
-                  <ion-card-title>Contact</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-input label="First name" labelPlacement="floating" placeholder="Enter your first name"
-                      type="text" formControlName="firstName"></ion-input>
-                    <app-error-message message="Name is mandatory" [field]="registerForm.getForm().get('firstName')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Last name" labelPlacement="floating" placeholder="Enter your Last name"
-                      type="text" formControlName="lastName"></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Contact number" labelPlacement="floating" placeholder="Enter your contact number"
-                      type="number" formControlName="contactNumber"></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Email" labelPlacement="floating" placeholder="Enter your email" type="email"
-                      formControlName="email"></ion-input>
-                    <app-error-message message="Email is invalid" [field]="registerForm.getForm().get('email')!"
-                      error="email"></app-error-message>
-                    <app-error-message message="Email is mandatory" [field]="registerForm.getForm().get('email')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Password" labelPlacement="floating" placeholder="Enter your password"
-                      type="password" formControlName="password" (focus)="presentPasswordPopover($event)"></ion-input>
-                    <app-error-message message="Password is mandatory" [field]="registerForm.getForm().get('password')!"
-                      error="required"></app-error-message>
-                    <app-error-message message="Password must be at least 7 characters long"
-                      [field]="registerForm.getForm().get('password')!" error="minlength"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Repeat password" labelPlacement="floating" placeholder="Confirm your password"
-                      type="password" formControlName="repeatPassword"></ion-input>
-                    <app-error-message message="Confirm password is mandatory"
-                      [field]="registerForm.getForm().get('repeatPassword')!" error="required"></app-error-message>
-                    <app-error-message message="Passwords must be identical"
-                      [field]="registerForm.getForm().get('repeatPassword')!" error="areEqual"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Birth Date" labelPlacement="floating" placeholder="Enter your birth date"
-                      type="date" formControlName="birthDate"></ion-input>
-                    <app-error-message message="Birth Date is mandatory"
-                      [field]="registerForm.getForm().get('birthDate')!" error="required"></app-error-message>
-                  </ion-item>
-                </ion-card-content>
-              </ion-card>
-
-
-              <!-- Step 3: Address Information -->
-              <ion-card *ngIf="currentStep === 3">
-                <ion-card-header>
-                  <ion-card-title>Address Information</ion-card-title>
-                </ion-card-header>
-                <ion-card-content formGroupName="address">
-                  <ion-item>
-                    <ion-input label="Street" labelPlacement="floating" placeholder="Enter your address street"
-                      type="text" formControlName="street"></ion-input>
-                    <app-error-message message="Street is mandatory"
-                      [field]="registerForm.getForm().get('address')?.get('street')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Number" labelPlacement="floating" placeholder="Enter your address number"
-                      type="tel" formControlName="number"></ion-input>
-                    <app-error-message message="Number is mandatory"
-                      [field]="registerForm.getForm().get('address')?.get('number')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Complement" labelPlacement="floating" placeholder="Complement" type="text"
-                      formControlName="complement"></ion-input>
-                    <app-error-message message="Complement is mandatory"
-                      [field]="registerForm.getForm().get('address')?.get('complement')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="City" labelPlacement="floating" placeholder="City" type="text"
-                      formControlName="city"></ion-input>
-                    <app-error-message message="City is mandatory"
-                      [field]="registerForm.getForm().get('address')?.get('city')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Zip Code" labelPlacement="floating" placeholder="Zip Code" type="text"
-                      formControlName="zipCode"></ion-input>
-                    <app-error-message message="Zip Code is mandatory"
-                      [field]="registerForm.getForm().get('address')?.get('zipCode')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Country" labelPlacement="floating" placeholder="Country" type="text"
-                      formControlName="country"></ion-input>
-                    <app-error-message message="Country is mandatory"
-                      [field]="registerForm.getForm().get('address')?.get('country')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                </ion-card-content>
-              </ion-card>
-
-              <!-- Step 4: Diagnosed Year -->
-              <ion-card *ngIf="currentStep === 4">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label class="box-selector">When were you first diagnosed?</ion-label>
-                    <ion-select formControlName="diagnosedYear">
-                      <ion-select-option *ngFor="let year of years" [value]="year">{{ year }}</ion-select-option>
-                    </ion-select>
-                  </ion-item>
-                </ion-card-content>
-              </ion-card>
-
-              <ion-card *ngIf="currentStep === 5">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label class="box-selector">What type of IBD have you been diagnosed with?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="typeIBDInformation">
-                    <ion-item>
-                      <ion-label>Ulcerative Colitis</ion-label>
-                      <ion-radio slot="start" value="ulcerativeColitis"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Crohn's Disease</ion-label>
-                      <ion-radio slot="start" value="crohnsDisease"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-
-
-              <!-- Step 6: Impact on Daily Life -->
-              <ion-card *ngIf="currentStep === 6">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label class="box-selector">How much does IBD impact your daily life?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="impactInformation">
-                    <ion-item>
-                      <ion-label>A little</ion-label>
-                      <ion-radio slot="start" value="little"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Moderately</ion-label>
-                      <ion-radio slot="start" value="moderately"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Quite a bit</ion-label>
-                      <ion-radio slot="start" value="quiteABit"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Severely</ion-label>
-                      <ion-radio slot="start" value="severely"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-
-              <!-- Step 7: Impact on Sleep -->
-              <ion-card *ngIf="currentStep === 7">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label>How much does IBD impact your sleep?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="impactSleep">
-                    <ion-item>
-                      <ion-label>A little</ion-label>
-                      <ion-radio slot="start" value="little"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Moderately</ion-label>
-                      <ion-radio slot="start" value="moderately"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Quite a bit</ion-label>
-                      <ion-radio slot="start" value="quiteABit"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Severely</ion-label>
-                      <ion-radio slot="start" value="severely"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-              <!-- Step 8: Impact on Physical Activity -->
-              <ion-card *ngIf="currentStep === 8">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label>How much does IBD impact your physical activity?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="impactPhysicalActivity">
-                    <ion-item>
-                      <ion-label>A little</ion-label>
-                      <ion-radio slot="start" value="little"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Moderately</ion-label>
-                      <ion-radio slot="start" value="moderately"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Quite a bit</ion-label>
-                      <ion-radio slot="start" value="quiteABit"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Severely</ion-label>
-                      <ion-radio slot="start" value="severely"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-
-              <ion-card *ngIf="currentStep === 9">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label>How much does IBD impact your sexual life?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="impactSexualLife">
-                    <ion-item>
-                      <ion-label>A little</ion-label>
-                      <ion-radio slot="start" value="little"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Moderately</ion-label>
-                      <ion-radio slot="start" value="moderately"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Quite a bit</ion-label>
-                      <ion-radio slot="start" value="quiteABit"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Severely</ion-label>
-                      <ion-radio slot="start" value="severely"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-
-              <ion-card *ngIf="currentStep === 10">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label>How much does IBD impact your diet and nutrition?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="impactDietAndNutrition">
-                    <ion-item>
-                      <ion-label>A little</ion-label>
-                      <ion-radio slot="start" value="little"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Moderately</ion-label>
-                      <ion-radio slot="start" value="moderately"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Quite a bit</ion-label>
-                      <ion-radio slot="start" value="quiteABit"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Severely</ion-label>
-                      <ion-radio slot="start" value="severely"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-
-              <ion-card *ngIf="currentStep === 11">
-                <ion-card-header>
-                  <div class="image-container">
-                    <ion-img src="assets/images/registration_form.png"></ion-img>
-                  </div>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label>How much does IBD impact your emotional connection with others?</ion-label>
-                  </ion-item>
-                  <ion-radio-group formControlName="impactEmotionalConnection">
-                    <ion-item>
-                      <ion-label>A little</ion-label>
-                      <ion-radio slot="start" value="little"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Moderately</ion-label>
-                      <ion-radio slot="start" value="moderately"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Quite a bit</ion-label>
-                      <ion-radio slot="start" value="quiteABit"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>Severely</ion-label>
-                      <ion-radio slot="start" value="severely"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-card-content>
-              </ion-card>
-
-
-
-              <div class="navigation-buttons">
-                <ion-button (click)="prevStep()" *ngIf="currentStep !== 1 && currentStep !== 11">Previous</ion-button>
-                <ion-button (click)="nextStep()" [disabled]="!isStepValid()"
-                  *ngIf="currentStep !== 11 && currentStep !== 10">Next</ion-button>
-                <ion-button class="registerButton" *ngIf="currentStep === 10" (click)="register()"
-                  [disabled]="!registerForm.getForm().valid">Sign Up</ion-button>
+            <div class="medical-report-container">
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
               </div>
-
+              <p class="description">Registration will only be completed with the submission of a medical report.
+              </p>
+              <input type="file" id="medicalReport" (change)="onFileSelected($event)" class="file-input">
+              <label for="medicalReport" class="file-label">Choose File</label>
+              <span class="file-chosen" *ngIf="selectedFile">{{ selectedFile.name }}</span>
             </div>
-          </form>
+          </ion-card>
 
-        </ion-card>
+          <!-- Step 2: Contact -->
+          <ion-card *ngIf="currentStep === 2">
+            <ion-card-header>
+              <ion-card-title>Contact</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-input label="First name" labelPlacement="floating" placeholder="Enter your first name" type="text"
+                  formControlName="firstName"></ion-input>
+                <app-error-message message="Name is mandatory" [field]="registerForm.getForm().get('firstName')!"
+                  error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Last name" labelPlacement="floating" placeholder="Enter your Last name" type="text"
+                  formControlName="lastName"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Contact number" labelPlacement="floating" placeholder="Enter your contact number"
+                  type="number" formControlName="contactNumber"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Email" labelPlacement="floating" placeholder="Enter your email" type="email"
+                  formControlName="email"></ion-input>
+                <app-error-message message="Email is invalid" [field]="registerForm.getForm().get('email')!"
+                  error="email"></app-error-message>
+                <app-error-message message="Email is mandatory" [field]="registerForm.getForm().get('email')!"
+                  error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Password" labelPlacement="floating" placeholder="Enter your password" type="password"
+                  formControlName="password" (focus)="presentPasswordPopover($event)"></ion-input>
+                <app-error-message message="Password is mandatory" [field]="registerForm.getForm().get('password')!"
+                  error="required"></app-error-message>
+                <app-error-message message="Password must be at least 7 characters long"
+                  [field]="registerForm.getForm().get('password')!" error="minlength"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Repeat password" labelPlacement="floating" placeholder="Confirm your password"
+                  type="password" formControlName="repeatPassword"></ion-input>
+                <app-error-message message="Confirm password is mandatory"
+                  [field]="registerForm.getForm().get('repeatPassword')!" error="required"></app-error-message>
+                <app-error-message message="Passwords must be identical"
+                  [field]="registerForm.getForm().get('repeatPassword')!" error="areEqual"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Birth Date" labelPlacement="floating" placeholder="Enter your birth date" type="date"
+                  formControlName="birthDate"></ion-input>
+                <app-error-message message="Birth Date is mandatory" [field]="registerForm.getForm().get('birthDate')!"
+                  error="required"></app-error-message>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+
+          <!-- Step 3: Address Information -->
+          <ion-card *ngIf="currentStep === 3">
+            <ion-card-header>
+              <ion-card-title>Address Information</ion-card-title>
+            </ion-card-header>
+            <ion-card-content formGroupName="address">
+              <ion-item>
+                <ion-input label="Street" labelPlacement="floating" placeholder="Enter your address street" type="text"
+                  formControlName="street"></ion-input>
+                <app-error-message message="Street is mandatory"
+                  [field]="registerForm.getForm().get('address')?.get('street')!" error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Number" labelPlacement="floating" placeholder="Enter your address number" type="tel"
+                  formControlName="number"></ion-input>
+                <app-error-message message="Number is mandatory"
+                  [field]="registerForm.getForm().get('address')?.get('number')!" error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Complement" labelPlacement="floating" placeholder="Complement" type="text"
+                  formControlName="complement"></ion-input>
+                <app-error-message message="Complement is mandatory"
+                  [field]="registerForm.getForm().get('address')?.get('complement')!"
+                  error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="City" labelPlacement="floating" placeholder="City" type="text"
+                  formControlName="city"></ion-input>
+                <app-error-message message="City is mandatory"
+                  [field]="registerForm.getForm().get('address')?.get('city')!" error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Zip Code" labelPlacement="floating" placeholder="Zip Code" type="text"
+                  formControlName="zipCode"></ion-input>
+                <app-error-message message="Zip Code is mandatory"
+                  [field]="registerForm.getForm().get('address')?.get('zipCode')!" error="required"></app-error-message>
+              </ion-item>
+              <ion-item>
+                <ion-input label="Country" labelPlacement="floating" placeholder="Country" type="text"
+                  formControlName="country"></ion-input>
+                <app-error-message message="Country is mandatory"
+                  [field]="registerForm.getForm().get('address')?.get('country')!" error="required"></app-error-message>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+          <!-- Step 4: Diagnosed Year -->
+          <ion-card *ngIf="currentStep === 4">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label class="box-selector">When were you first diagnosed?</ion-label>
+                <ion-select formControlName="diagnosedYear">
+                  <ion-select-option *ngFor="let year of years" [value]="year">{{ year }}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="currentStep === 5">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label class="box-selector">What type of IBD have you been diagnosed with?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="typeIBDInformation">
+                <ion-item>
+                  <ion-label>Ulcerative Colitis</ion-label>
+                  <ion-radio slot="start" value="ulcerativeColitis"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Crohn's Disease</ion-label>
+                  <ion-radio slot="start" value="crohnsDisease"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+
+
+          <!-- Step 6: Impact on Daily Life -->
+          <ion-card *ngIf="currentStep === 6">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label class="box-selector">How much does IBD impact your daily life?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="impactInformation">
+                <ion-item>
+                  <ion-label>A little</ion-label>
+                  <ion-radio slot="start" value="little"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Moderately</ion-label>
+                  <ion-radio slot="start" value="moderately"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quite a bit</ion-label>
+                  <ion-radio slot="start" value="quiteABit"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Severely</ion-label>
+                  <ion-radio slot="start" value="severely"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+
+          <!-- Step 7: Impact on Sleep -->
+          <ion-card *ngIf="currentStep === 7">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>How much does IBD impact your sleep?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="impactSleep">
+                <ion-item>
+                  <ion-label>A little</ion-label>
+                  <ion-radio slot="start" value="little"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Moderately</ion-label>
+                  <ion-radio slot="start" value="moderately"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quite a bit</ion-label>
+                  <ion-radio slot="start" value="quiteABit"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Severely</ion-label>
+                  <ion-radio slot="start" value="severely"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+          <!-- Step 8: Impact on Physical Activity -->
+          <ion-card *ngIf="currentStep === 8">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>How much does IBD impact your physical activity?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="impactPhysicalActivity">
+                <ion-item>
+                  <ion-label>A little</ion-label>
+                  <ion-radio slot="start" value="little"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Moderately</ion-label>
+                  <ion-radio slot="start" value="moderately"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quite a bit</ion-label>
+                  <ion-radio slot="start" value="quiteABit"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Severely</ion-label>
+                  <ion-radio slot="start" value="severely"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="currentStep === 9">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>How much does IBD impact your sexual life?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="impactSexualLife">
+                <ion-item>
+                  <ion-label>A little</ion-label>
+                  <ion-radio slot="start" value="little"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Moderately</ion-label>
+                  <ion-radio slot="start" value="moderately"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quite a bit</ion-label>
+                  <ion-radio slot="start" value="quiteABit"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Severely</ion-label>
+                  <ion-radio slot="start" value="severely"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="currentStep === 10">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>How much does IBD impact your diet and nutrition?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="impactDietAndNutrition">
+                <ion-item>
+                  <ion-label>A little</ion-label>
+                  <ion-radio slot="start" value="little"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Moderately</ion-label>
+                  <ion-radio slot="start" value="moderately"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quite a bit</ion-label>
+                  <ion-radio slot="start" value="quiteABit"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Severely</ion-label>
+                  <ion-radio slot="start" value="severely"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="currentStep === 11">
+            <ion-card-header>
+              <div class="image-container">
+                <ion-img src="assets/images/registration_form.png"></ion-img>
+              </div>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>How much does IBD impact your emotional connection with others?</ion-label>
+              </ion-item>
+              <ion-radio-group formControlName="impactEmotionalConnection">
+                <ion-item>
+                  <ion-label>A little</ion-label>
+                  <ion-radio slot="start" value="little"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Moderately</ion-label>
+                  <ion-radio slot="start" value="moderately"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quite a bit</ion-label>
+                  <ion-radio slot="start" value="quiteABit"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Severely</ion-label>
+                  <ion-radio slot="start" value="severely"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-card-content>
+          </ion-card>
+
+
+
+          <div class="navigation-buttons">
+            <ion-button (click)="prevStep()" *ngIf="currentStep !== 1 && currentStep !== 11">Previous</ion-button>
+            <ion-button (click)="nextStep()" [disabled]="!isStepValid()"
+              *ngIf="currentStep !== 11 && currentStep !== 10">Next</ion-button>
+            <ion-button class="registerButton" *ngIf="currentStep === 10" (click)="register()"
+              [disabled]="!registerForm.getForm().valid">Sign Up</ion-button>
+          </div>
+        </form>
+
       </ion-col>
     </ion-row>
   </ion-grid>
