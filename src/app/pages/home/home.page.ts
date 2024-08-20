@@ -26,6 +26,8 @@ export class HomePage implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
+
+
   ngAfterViewInit() {
     // DOM Manipulation or Event Listeners should be in ngAfterViewInit
     const donationButton = document.querySelector('.donation-button');
@@ -52,6 +54,9 @@ export class HomePage implements OnInit, AfterViewInit {
 
   signup() {
     this.router.navigate(['register']);
+  }
+  aboutUs() {
+    this.router.navigate(['about-us']);
   }
 
   login() {

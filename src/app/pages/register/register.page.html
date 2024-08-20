@@ -11,24 +11,21 @@
     <ion-row>
       <ion-col class="flex-center">
         <!-- Centering the form card within the column -->
-
-
-
         <form [formGroup]="registerForm.getForm()">
-
           <!-- Progress Bar -->
           <div class="progress-bar-container">
-            <ion-progress-bar [value]="currentStep / 11"></ion-progress-bar>
-            <div class="progress-bar-text">{{currentStep}} / 11</div>
+            <ion-progress-bar [value]="currentStep / 13"></ion-progress-bar>
+            <div class="progress-bar-text">{{currentStep}} / 13</div>
           </div>
 
           <!-- Step 1: Upload Medical Report -->
           <ion-card *ngIf="currentStep === 1">
+            <ion-img src="assets/images/logo.png" class="top-right-logo"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Medical Report</ion-card-title>
+            </ion-card-header>
 
             <div class="medical-report-container">
-              <div class="image-container">
-                <ion-img src="assets/images/registration_form.png"></ion-img>
-              </div>
               <p class="description">Registration will only be completed with the submission of a medical report.
               </p>
               <input type="file" id="medicalReport" (change)="onFileSelected($event)" class="file-input">
@@ -39,6 +36,7 @@
 
           <!-- Step 2: Contact -->
           <ion-card *ngIf="currentStep === 2">
+            <ion-img src="assets/images/logo.png" class="top-right-logo"></ion-img>
             <ion-card-header>
               <ion-card-title>Contact</ion-card-title>
             </ion-card-header>
@@ -365,14 +363,70 @@
               </ion-radio-group>
             </ion-card-content>
           </ion-card>
+          <ion-card *ngIf="currentStep === 12">
+            <ion-img src="assets/images/logo.png" class="top-right-logo"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Consent form</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <ion-item>
+
+                <ion-label class="terms">
+                  By signing up, you allow us to use your information to show you the best recommendations for connections.
+                </ion-label><ion-checkbox slot="start"  formControlName="acceptTerms"></ion-checkbox>
+                <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptTerms')!" error="required"></app-error-message>
+              </ion-item>
+
+              <ion-item>
+
+                <ion-label class="terms">
+                  Can we analyze your data to understand or help others?
+                  <span style="color: green; display: block; margin-top: 5px;">
+                    We promise to completely anonymize your information and will never sell your data.
+                  </span>
+                </ion-label><ion-checkbox slot="start"  formControlName="acceptDataAnalysis"></ion-checkbox>
+                <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptDataAnalysis')!" error="required"></app-error-message>
+              </ion-item>
+
+              <ion-item>
+
+                <ion-label class="terms">
+                  I acknowledge that I have read and agree to the
+                  <a href="/terms" style="color: blue;">Terms of Agreement</a> and consent to the
+                  <a href="/privacy-policy" style="color: blue;">Privacy Policy</a> and Video Privacy Policy.
+                </ion-label>  <ion-checkbox slot="start"  formControlName="acceptTermsAndPrivacy"></ion-checkbox>
+                <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptTermsAndPrivacy')!" error="required"></app-error-message>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+
+          <ion-card *ngIf="currentStep === 13">
+            <ion-img src="assets/images/logo.png" class="top-right-logo"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Thank You!</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-text>
+                  <h1>Thank you for your interest in our platform.</h1>
+                  <p>This website is specifically designed to support individuals with Inflammatory Bowel Disease (IBD). Since you have indicated that you do not have IBD, you will not be able to create an account.</p>
+                  <p>If you are a caregiver or seeking more information about IBD, please visit our public resources section here. We appreciate your understanding.</p>
+                </ion-text>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+
 
 
 
           <div class="navigation-buttons">
-            <ion-button (click)="prevStep()" *ngIf="currentStep !== 1 && currentStep !== 11">Previous</ion-button>
+            <ion-button (click)="prevStep()" *ngIf="currentStep !== 1 && currentStep !== 13">Previous</ion-button>
             <ion-button (click)="nextStep()" [disabled]="!isStepValid()"
-              *ngIf="currentStep !== 11 && currentStep !== 10">Next</ion-button>
-            <ion-button class="registerButton" *ngIf="currentStep === 10" (click)="register()"
+              *ngIf="currentStep !== 13 && currentStep !== 12">Next</ion-button>
+            <ion-button class="registerButton" *ngIf="currentStep === 12" (click)="register()"
               [disabled]="!registerForm.getForm().valid">Sign Up</ion-button>
           </div>
         </form>

@@ -110,7 +110,10 @@ export class RegisterPage implements OnInit, OnDestroy {
       console.log('Selected file:', this.selectedFile);
 
       // After registration is successful, redirect to another page
-      this.router.navigate(['/thank-you']);
+      if (this.isStepValid()) {
+        this.currentStep==13
+      }
+      this.router.navigate(['/home']);
     } else {
       // Handle the invalid form state
       console.error('Form is invalid');

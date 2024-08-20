@@ -3,9 +3,22 @@
     <app-header></app-header>
   </ion-header>
 
-    <div class="image-container">
-      <app-swiper-card></app-swiper-card>
-    </div>
+  <app-cover-picture [imageUrl]="'assets/images/homePageCover.png'" [altText]="'about-ibd-cover'">
+
+  </app-cover-picture>
+  <div class="join-us-container">
+    <ion-button fill="solid" class="join-us-button" routerLink="/login"
+    (click)="login()">
+      Join us
+    </ion-button>
+  </div>
+
+  <div class="logo-container clickable">
+    <ion-img src="assets/images/logo.png" fill="solid" class="logo-img" routerLink="/about-us"
+    (click)="aboutUs()"></ion-img>
+
+  </div>
+
 
     <!-- Category Selector -->
     <div class="category-selector">
@@ -57,18 +70,18 @@
           Rectal pain and pressure
         </button>
         <button class="category-button" (click)="changeCategory($event, 'Anemia')">
-          <img src="assets/icon/ConcernsPics/fatigue.png" alt="Anemia" class="button-image">
+          <img src="assets/icon/ConcernsPics/apetiteLoss.png" alt="Anemia" class="button-image">
           Anemia
         </button>
         <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
-          <img src="assets/icon/ConcernsPics/fatigue.png" alt="Joint pain and arthritis"
+          <img src="assets/icon/ConcernsPics/urgentToilet.png" alt="Joint pain and arthritis"
             class="button-image">
-          Joint pain and arthritis
+            Urgent toilet.png
         </button>
         <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
-          <img src="assets/icon/ConcernsPics/fatigue.png" alt="Joint pain and arthritis"
+          <img src="assets/icon/ConcernsPics/inabilityToControlBowel.png" alt="Joint pain and arthritis"
             class="button-image">
-          Joint pain and arthritis
+          Inability to control bowel
         </button>
       </div>
       <div class="view-recommendations-container">
@@ -128,7 +141,7 @@
   </ion-fab>
 
   <div class="donation-button" routerLink="/donation">
-    DONATION
+    Donate
   </div>
 
   <footer>

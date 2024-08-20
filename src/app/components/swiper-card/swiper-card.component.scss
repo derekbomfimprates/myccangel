@@ -107,39 +107,48 @@
 
 /* Menu Container Styles */
 .menu-container {
-  position: relative; /* Ensure it’s in the normal flow of the document */
-  z-index: 10; /* Ensure it's above other elements if necessary */
+  position: relative;
+  z-index: 10;
 }
 
 .menu-selector {
-  display: flex !important;
-  justify-content: right !important;
-  background-color: transparent !important;
-  padding: 10px 0 !important;
+  display: flex;
+  justify-content: right;
+  background-color: transparent;
+  padding: 10px 0;
   cursor: pointer;
 }
+
 .header-logo.clickable {
   cursor: pointer;
 }
+
 .menu-selector ul {
-  list-style-type: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex !important;
-  justify-content: center !important;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-selector li {
-  margin: 0 15px !important;
+  margin: 0 15px;
 }
 
 .menu-selector a {
-  text-decoration: none !important;
-  color: #33265E !important;
-  font-weight: bold !important;
-  font-size: 20px !important;
+  text-decoration: none;
+  color: #33265E;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .menu-selector a:hover {
-  color: purple !important;
+  color: purple;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-container {
+    display: none; /* Hide the menu on screens smaller than 768px */
+  }
 }

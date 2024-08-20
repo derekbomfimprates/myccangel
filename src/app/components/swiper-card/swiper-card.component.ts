@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SwiperCardComponent implements OnInit, OnDestroy {
   images = [
-    'assets/images/home page 1-Grey bkg.png',
-    'assets/images/Chat bot grey background.png',
+    'assets/images/homePageGreyBkg.png',
+    'assets/images/chatBotGreyBackground.png',
     'assets/images/Navigator.gif'
   ];
 

@@ -1,8 +1,11 @@
 /* Footer Styles */
-ion-footer {
-  background-color: #ffff !important;
-}
 
+ion-toolbar {
+  --background: #ECD6FB !important;
+}
+img{
+  width: 50%;
+}
 .footer-nav {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -13,7 +16,7 @@ ion-footer {
 
 .footer-link {
   font-size: 14px !important;
-  color: #B95CF4 !important;
+  color: #33265E !important;
   margin: 0 10px !important;
   text-decoration: none !important;
 }
@@ -37,11 +40,11 @@ ion-footer {
 
 .footer-socials ion-icon {
   font-size: 24px !important;
-  color: #B95CF4 !important;
+  color: #33265E !important;
 }
 
 .footer-socials ion-button:hover ion-icon {
-  color: #5a2d91 !important;
+  color: #33265E !important;
 }
 
 /* Responsive Styles */
