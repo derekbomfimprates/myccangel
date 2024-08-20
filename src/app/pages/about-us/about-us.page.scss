@@ -1,10 +1,9 @@
-
-
+/* General Styles */
 .header {
   align-items: center;
   padding-bottom: 1%;
   flex-direction: row;
-  position: relative; // Ensure the header is positioned correctly
+  position: relative;
 }
 
 .edit-button {
@@ -83,60 +82,9 @@
     font-size: 12px;
     text-align: center;
   }
-
-  .card-body {
-    padding: 15px;
-  }
-
-  .media-card {
-    padding: 15px;
-    border-radius: 8px;
-  }
-
-  .custom-card-title, .custom-card-title-center {
-    padding: 4px 8px;
-  }
-
-  .media-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-us-section {
-    margin: 15px;
-    padding: 15px;
-    font-size: 16px;
-  }
-
-  .about-us-section h2 {
-    font-size: 24px;
-  }
-
-  .about-us-section ul li {
-    font-size: 14px;
-  }
 }
 
-ion-content {
-  --background:  #fff;
-  height: auto;
-  min-height: 100vh;
-  width: 100%;
-  position: relative; // Position relative to control stacking context
-
-}
-
-ion-toolbar {
-  --background: transparent;
-  position: relative; // Make sure toolbar stacks correctly
-}
-
-ion-chip {
-  font-size: 16px;
-  font-weight: 200;
-  color: #303940;
-  background-color: transparent;
-}
-
+/* Card Body and Media Card Styles */
 .card {
   margin-top: -20px;
   width: 100%;
@@ -162,17 +110,7 @@ ion-chip {
   width: 100%;
 }
 
-.custom-card-title {
-  background-color: #B95CF4;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  margin: 0;
-  width: fit-content;
-}
-
+.custom-card-title,
 .custom-card-title-center {
   background-color: #B95CF4;
   color: white;
@@ -180,6 +118,9 @@ ion-chip {
   border-radius: 8px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   width: fit-content;
+}
+
+.custom-card-title-center {
   margin: 0 auto;
   display: block;
 }
@@ -205,7 +146,6 @@ ion-chip {
   color: white;
   padding: 5px 5px;
   border-radius: 0 0 8px 8px;
-  box-sizing: border-box;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -213,9 +153,25 @@ ion-chip {
   .card-body {
     flex-direction: column;
     align-items: center;
+    padding: 15px;
+  }
+
+  .media-card {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .custom-card-title,
+  .custom-card-title-center {
+    padding: 4px 8px;
   }
 }
 
+/* About Us Section */
 .about-us-section {
   margin: 20px;
   padding: 20px;
@@ -225,8 +181,8 @@ ion-chip {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: #303940;
+  font-size: 20px;
   text-align: justify;
-  font-size: 18px;
 }
 
 .about-us-section h2 {
@@ -237,9 +193,8 @@ ion-chip {
 }
 
 .about-us-section p {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   line-height: 1.6;
-  text-align: justify;
 }
 
 .about-us-section ul {
@@ -251,27 +206,11 @@ ion-chip {
 .about-us-section ul li {
   margin-bottom: 8px;
   text-align: justify;
-  font-size: 14px;
+  font-size: 20px;
+  padding-left: 2%;
 }
 
 .about-us-section ul li:before {
   content: "- ";
-  color: #B95CF4;
+  color: #33265E;
 }
-
-/* Donation Button Styles */
-.donation-button {
-  position: fixed !important;
-  left: 0 !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  writing-mode: vertical-rl !important;
-  text-orientation: mixed !important;
-  background-color: rgb(50, 185, 9) !important;
-  color: white !important;
-  padding: 10px 15px !important;
-  border-radius: 0 10px 10px 0 !important;
-  cursor: pointer !important;
-  font-size: 18px !important;
-}
-

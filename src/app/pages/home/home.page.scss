@@ -115,6 +115,8 @@ ion-title {
 .search-icon {
   color: #513894;
   font-size: 20px;
+  padding-bottom: 23px;
+  padding-right: 5px;
 }
 
 /* Long Card Styles */
@@ -196,20 +198,7 @@ ion-fab-button ion-icon {
   padding-bottom: 20%;
 }
 
-/* Donation Button Styles */
-.donation-button {
-  position: fixed;
-  left: -5px;
-  top: 40%;
-  transform: translateY(-50%);
-  writing-mode: vertical-rl;
-  background-color: rgb(50, 185, 9);
-  color: white;
-  padding: 5px 5px;
-  border-radius: 0 5px 5px 0;
-  z-index: 1000;
-  font-size: 15px;
-}
+
 /* Cover Picture Container Styles */
 .cover-picture-container {
   position: relative;
@@ -230,10 +219,16 @@ ion-fab-button ion-icon {
 
 .logo-container{
   position: absolute;
-  top: 25%; /* Centers the button vertically */
-  left: 30%; /* Centers the button horizontally */
+  top: 15%; /* Centers the button vertically */
+  left: 20%; /* Centers the button horizontally */
   transform: translate(-50%, -50%); /* Adjust for centering */
   z-index: 100; /* Ensures the button stays above the image */
+}
+/* Hide logo container on small screens */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none; /* Hide the logo container on screens 768px and smaller */
+  }
 }
 .logo-img {
   width: 50%;
@@ -245,8 +240,8 @@ ion-fab-button ion-icon {
 /* Join Us Button Container Styles */
 .join-us-container {
   position: absolute;
-  top: 85%; /* Centers the button vertically */
-  left: 9.5%; /* Centers the button horizontally */
+  top: 75%; /* Centers the button vertically */
+  left: 7.7%; /* Centers the button horizontally */
   transform: translate(-50%, -50%); /* Adjust for centering */
   z-index: 100; /* Ensures the button stays above the image */
 }
@@ -259,6 +254,15 @@ ion-fab-button ion-icon {
   border-radius: 8px;
 }
 
+
+/* Media Queries for Responsiveness */
+
+/* Hide join button container on small screens */
+@media (max-width: 768px) {
+  .join-us-container {
+    display: none; /* Hide the join button container on screens 768px and smaller */
+  }
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .custom-card-title-center {

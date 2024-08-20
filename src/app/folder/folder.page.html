@@ -1,21 +1,29 @@
 <ion-header [translucent]="true">
+  <!-- Main header with a translucent background -->
   <ion-toolbar>
+    <!-- Start slot: Menu button -->
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <!-- Center slot: Dynamic title -->
     <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- Condensed header for when content scrolls -->
   <ion-header collapse="condense">
     <ion-toolbar>
+      <!-- Large title when the header is condensed -->
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <!-- Main content container -->
   <div id="container">
+    <!-- Strong text, dynamically displaying the folder name -->
     <strong class="capitalize">{{ folder }}</strong>
+    <!-- Paragraph with a link to UI Components documentation -->
     <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
 </ion-content>

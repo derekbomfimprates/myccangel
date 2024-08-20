@@ -62,9 +62,7 @@ export class HomePage implements OnInit, AfterViewInit {
   login() {
     this.router.navigate(['login']);
   }
-  donation() {
-    this.router.navigate(['donation']);
-  }
+
   // Add this method to handle category changes
   changeCategory(event: Event, category: string) {
     event.preventDefault(); // Prevent default button click behavior

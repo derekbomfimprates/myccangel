@@ -3,11 +3,11 @@
     <app-header></app-header>
   </ion-header>
 
-  <app-cover-picture [imageUrl]="'assets/images/Blogs.png'" [altText]="'about-us-cover'"></app-cover-picture>
+  <app-cover-picture [imageUrl]="'assets/images/blogs.png'" [altText]="'about-us-cover'"></app-cover-picture>
 
 
   <!-- Donation Button -->
-  <button id="donationButton" [ngClass]="{'donation-button': true, 'visible': donationButtonVisible}">Donate</button>
+  <app-donate-button></app-donate-button>
 
 
   <!-- About Us Section -->

@@ -9,6 +9,7 @@ import { ButtonsComponent } from '../components/buttons/buttons.component';
 import { ErrorMessageComponent } from '../components/error-message/error-message.component';
 import { CoverPictureComponent } from '../components/cover-picture/cover-picture.component';
 import { PasswordPopoverComponent } from '../components/password-popover/password-popover.component';
+import { DonateButtonComponent } from '../components/donate-button/donate-button.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PasswordPopoverComponent } from '../components/password-popover/passwor
     ButtonsComponent,
     ErrorMessageComponent,
     CoverPictureComponent,
-    PasswordPopoverComponent
+    PasswordPopoverComponent,
+    DonateButtonComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { PasswordPopoverComponent } from '../components/password-popover/passwor
     ButtonsComponent,
     ErrorMessageComponent,
     CoverPictureComponent,
-    PasswordPopoverComponent
+    PasswordPopoverComponent,
+    DonateButtonComponent
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

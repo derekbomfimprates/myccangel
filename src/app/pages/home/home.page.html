@@ -1,98 +1,114 @@
 <ion-content fullscreen="true">
+  <!-- Main content with fullscreen display -->
+
   <ion-header>
+    <!-- Custom app header component -->
     <app-header></app-header>
   </ion-header>
 
+  <!-- Cover picture component for the homepage -->
   <app-cover-picture [imageUrl]="'assets/images/homePageCover.png'" [altText]="'about-ibd-cover'">
-
   </app-cover-picture>
+
+  <!-- Donation Button -->
+  <app-donate-button></app-donate-button>
+
+  <!-- Join Us Button -->
   <div class="join-us-container">
-    <ion-button fill="solid" class="join-us-button" routerLink="/login"
-    (click)="login()">
+    <!-- Button to navigate to the login page -->
+    <ion-button fill="solid" class="join-us-button" routerLink="/login" (click)="login()">
       Join us
     </ion-button>
   </div>
 
+  <!-- Logo Container -->
   <div class="logo-container clickable">
-    <ion-img src="assets/images/logo.png" fill="solid" class="logo-img" routerLink="/about-us"
-    (click)="aboutUs()"></ion-img>
-
+    <!-- Clickable logo image that links to the About Us page -->
+    <ion-img src="assets/images/logo.png" fill="solid" class="logo-img" routerLink="/about-us" (click)="aboutUs()"></ion-img>
   </div>
 
+  <!-- Category Selector -->
+  <div class="category-selector">
 
-    <!-- Category Selector -->
-    <div class="category-selector">
-
-      <div class="selector-label">
-        <ion-icon name="search-outline" class="search-icon"></ion-icon>
-        <span>SELECT CONCERN:</span>
-      </div>
-      <div class="selector-buttons">
-        <button class="category-button" (click)="changeCategory($event, 'Abdominal Pain & Cramping')">
-          <img src="assets/icon/ConcernsPics/abdominalPain.png" alt="Abdominal Pain & Cramping"
-            class="button-image">
-          Abdominal Pain & Cramping
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Blood and/or Mucus in stool')">
-          <img src="assets/icon/ConcernsPics/bloodStool.png" alt="Blood and/or Mucus in stool"
-            class="button-image">
-          Blood and/or Mucus in stool
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Fatigue and Weakness')">
-          <img src="assets/icon/ConcernsPics/fatigue.png" alt="Fatigue and Weakness" class="button-image">
-          Fatigue and Weakness
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Diarrhea')">
-          <img src="assets/icon/ConcernsPics/diarrhea.png" alt="Diarrhea" class="button-image">
-          Diarrhea
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Constipation')">
-          <img src="assets/icon/ConcernsPics/constipation.png" alt="Constipation" class="button-image">
-          Constipation
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Weight loss and malnutrition')">
-          <img src="assets/icon/ConcernsPics/weightLoss.png" alt="Weight loss and malnutrition"
-            class="button-image">
-          Weight loss and malnutrition
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Loss of appetite')">
-          <img src="assets/icon/ConcernsPics/apetiteLoss.png" alt="Loss of appetite" class="button-image">
-          Loss of appetite
-        </button>
-
-        <button class="category-button" (click)="changeCategory($event, 'Nausea and vomiting')">
-          <img src="assets/icon/ConcernsPics/vomitting.png" alt="Nausea and vomiting" class="button-image">
-          Nausea and vomiting
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Rectal pain and pressure')">
-          <img src="assets/icon/ConcernsPics/rectalPain.png" alt="Rectal pain and pressure"
-            class="button-image">
-          Rectal pain and pressure
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Anemia')">
-          <img src="assets/icon/ConcernsPics/apetiteLoss.png" alt="Anemia" class="button-image">
-          Anemia
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
-          <img src="assets/icon/ConcernsPics/urgentToilet.png" alt="Joint pain and arthritis"
-            class="button-image">
-            Urgent toilet.png
-        </button>
-        <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
-          <img src="assets/icon/ConcernsPics/inabilityToControlBowel.png" alt="Joint pain and arthritis"
-            class="button-image">
-          Inability to control bowel
-        </button>
-      </div>
-      <div class="view-recommendations-container">
-        <ion-button fill="solid" class="view-recommendations-button">
-          View Recommendations
-        </ion-button>
-      </div>
+    <!-- Label for category selection -->
+    <div class="selector-label">
+      <ion-icon name="search-outline" class="search-icon"></ion-icon>
+      <span>SELECT CONCERN:</span>
     </div>
 
+    <!-- Buttons for selecting different health concerns -->
+    <div class="selector-buttons">
+      <!-- Abdominal Pain & Cramping Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Abdominal Pain & Cramping')">
+        <img src="assets/icon/ConcernsPics/abdominalPain.png" alt="Abdominal Pain & Cramping" class="button-image">
+        Abdominal Pain & Cramping
+      </button>
+      <!-- Blood and/or Mucus in Stool Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Blood and/or Mucus in stool')">
+        <img src="assets/icon/ConcernsPics/bloodStool.png" alt="Blood and/or Mucus in stool" class="button-image">
+        Blood and/or Mucus in stool
+      </button>
+      <!-- Fatigue and Weakness Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Fatigue and Weakness')">
+        <img src="assets/icon/ConcernsPics/fatigue.png" alt="Fatigue and Weakness" class="button-image">
+        Fatigue and Weakness
+      </button>
+      <!-- Diarrhea Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Diarrhea')">
+        <img src="assets/icon/ConcernsPics/diarrhea.png" alt="Diarrhea" class="button-image">
+        Diarrhea
+      </button>
+      <!-- Constipation Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Constipation')">
+        <img src="assets/icon/ConcernsPics/constipation.png" alt="Constipation" class="button-image">
+        Constipation
+      </button>
+      <!-- Weight Loss and Malnutrition Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Weight loss and malnutrition')">
+        <img src="assets/icon/ConcernsPics/weightLoss.png" alt="Weight loss and malnutrition" class="button-image">
+        Weight loss and malnutrition
+      </button>
+      <!-- Loss of Appetite Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Loss of appetite')">
+        <img src="assets/icon/ConcernsPics/apetiteLoss.png" alt="Loss of appetite" class="button-image">
+        Loss of appetite
+      </button>
+      <!-- Nausea and Vomiting Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Nausea and vomiting')">
+        <img src="assets/icon/ConcernsPics/vomitting.png" alt="Nausea and vomiting" class="button-image">
+        Nausea and vomiting
+      </button>
+      <!-- Rectal Pain and Pressure Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Rectal pain and pressure')">
+        <img src="assets/icon/ConcernsPics/rectalPain.png" alt="Rectal pain and pressure" class="button-image">
+        Rectal pain and pressure
+      </button>
+      <!-- Anemia Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Anemia')">
+        <img src="assets/icon/ConcernsPics/apetiteLoss.png" alt="Anemia" class="button-image">
+        Anemia
+      </button>
+      <!-- Joint Pain and Arthritis Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
+        <img src="assets/icon/ConcernsPics/urgentToilet.png" alt="Joint pain and arthritis" class="button-image">
+        Urgent toilet.png
+      </button>
+      <!-- Inability to Control Bowel Category -->
+      <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
+        <img src="assets/icon/ConcernsPics/inabilityToControlBowel.png" alt="Inability to control bowel" class="button-image">
+        Inability to control bowel
+      </button>
+    </div>
 
-  <!-- Card Container -->
+    <!-- Button to view recommendations based on the selected category -->
+    <div class="view-recommendations-container">
+      <ion-button fill="solid" class="view-recommendations-button">
+        View Recommendations
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Partner Logos Card Container -->
   <div class="card">
     <div class="card-body">
       <div class="card-container-partner">
@@ -101,6 +117,7 @@
         </ion-card-header>
         <ion-card-content>
           <div class="card-container-partner">
+            <!-- Logos of partner organizations -->
             <div class="square-card">
               <div class="card-text">
                 <img src="assets/images/logo_1.png">
@@ -117,33 +134,28 @@
               <div class="card-text">
                 <img src="assets/images/logo_1.png">
               </div>
-
             </div>
+
             <div class="square-card">
               <div class="card-text">
                 <img src="assets/images/logo_1.png">
               </div>
-
             </div>
-
-
           </div>
         </ion-card-content>
       </div>
     </div>
   </div>
 
-
+  <!-- Floating Action Button (FAB) -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <!-- Button to initiate a new conversation -->
     <ion-fab-button title="Press to start a conversation.">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <div class="donation-button" routerLink="/donation">
-    Donate
-  </div>
-
+  <!-- Footer Component -->
   <footer>
     <app-footer></app-footer>
   </footer>

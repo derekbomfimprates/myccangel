@@ -1,15 +1,23 @@
 <ion-toolbar class="ion-align-items-center ion-justify-content-between responsive-toolbar">
+  <!-- Start slot: Back button and menu button -->
   <ion-buttons slot="start">
+    <!-- Back button, only shown when not on the home page -->
     <ion-back-button *ngIf="!isHomePage()" defaultHref="/" icon="chevron-back-outline"></ion-back-button>
+    <!-- Menu button for opening the side menu -->
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
 
- <ion-title class="ion-text-center desktop-title" id="dynamic-title">
+  <!-- Center slot: Title of the toolbar -->
+  <ion-title class="ion-text-center desktop-title" id="dynamic-title">
     Early Diagnosis
   </ion-title>
+
+  <!-- End slot: Sign Up and Sign In buttons -->
   <ion-buttons slot="end" class="responsive-buttons">
     <div class="buttons-container">
+      <!-- Sign Up button, navigates to login page -->
       <ion-button class="signIn-button" routerLink="/login" (click)="login()">Sign Up</ion-button>
+      <!-- Sign In button, navigates to login page -->
       <ion-button class="login-button" routerLink="/login" (click)="login()">Sign In</ion-button>
     </div>
   </ion-buttons>
