@@ -219,10 +219,11 @@ ion-fab-button ion-icon {
 
 .logo-container{
   position: absolute;
-  top: 15%; /* Centers the button vertically */
-  left: 20%; /* Centers the button horizontally */
+  top: 22%; /* Centers the button vertically */
+  left: 17%; /* Centers the button horizontally */
   transform: translate(-50%, -50%); /* Adjust for centering */
   z-index: 100; /* Ensures the button stays above the image */
+  width: 30%;
 }
 /* Hide logo container on small screens */
 @media (max-width: 768px) {
@@ -240,8 +241,8 @@ ion-fab-button ion-icon {
 /* Join Us Button Container Styles */
 .join-us-container {
   position: absolute;
-  top: 75%; /* Centers the button vertically */
-  left: 7.7%; /* Centers the button horizontally */
+  top: 83%; /* Centers the button vertically */
+  left: 8.8%; /* Centers the button horizontally */
   transform: translate(-50%, -50%); /* Adjust for centering */
   z-index: 100; /* Ensures the button stays above the image */
 }

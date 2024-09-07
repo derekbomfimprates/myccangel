@@ -1,17 +1,16 @@
-
 /* Donation Button Styles */
 .donation-button {
-  position: fixed !important;
-  left: 0 !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  writing-mode: vertical-rl !important;
-  text-orientation: mixed !important;
-  background-color: rgb(50, 185, 9) !important;
-  color: white !important;
-  padding: 15px 10px 15px 5px !important;
-  border-radius: 0 3px 3px 0 !important;
-  cursor: pointer !important;
-  font-size: 20px !important;
-  z-index: 1000;
+  position: fixed; /* Fixed position to stay in the same place even when scrolling */
+  left: 0; /* Stick the button to the left side of the viewport */
+  top: 50%; /* Position the button at the vertical center */
+  transform: translateY(-50%); /* Offset the button by half of its own height to perfectly center it */
+  writing-mode: vertical-rl; /* Set the text to vertical writing mode */
+  text-orientation: mixed; /* Allows for mixed orientation in the text (useful for vertical text) */
+  background-color: rgb(50, 185, 9); /* Green background */
+  color: white; /* White text color */
+  padding: 15px 10px 15px 5px; /* Padding around the button */
+  border-radius: 0 3px 3px 0; /* Rounded corners on the right side */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  font-size: 20px; /* Text size */
+  z-index: 1000; /* Ensure the button is above other elements */
 }

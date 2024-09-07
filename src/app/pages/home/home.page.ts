@@ -55,8 +55,8 @@ export class HomePage implements OnInit, AfterViewInit {
   signup() {
     this.router.navigate(['register']);
   }
-  aboutUs() {
-    this.router.navigate(['about-us']);
+  home() {
+    this.router.navigate(['home']);
   }
 
   login() {

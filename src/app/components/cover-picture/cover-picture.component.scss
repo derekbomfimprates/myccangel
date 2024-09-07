@@ -6,8 +6,8 @@
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Ensure no overflow */
-  position: relative; /* For positioning child elements if needed */
-  margin-top: -45px;
+  position: relative; /* For positioning child elements */
+  margin-top: 0; /* Remove the negative margin */
 }
 
 .cover-picture-img {
@@ -17,28 +17,19 @@
   object-position: center; /* Center the image within the container */
 }
 
-/* Adjustments for Small Screens */
-@media (max-width: 768px) {
-  .cover-picture-container {
-    height: 45vh; /* Adjust height for mobile devices */
-  }
-
-  .cover-picture-img {
-    object-fit: contain; /* Ensure the image is fully visible */
-    height: auto; /* Adjust height to maintain aspect ratio */
-    width: 100%; /* Ensure width covers the container */
-  }
-}
-
 /* Menu Container Styles */
 .menu-container {
-  position: relative;
+  position: absolute; /* Position the menu absolutely within the cover picture */
+  top: 120px; /* Adjust this value to move the menu down */
+  width: 100%;
   z-index: 10;
+  left: 15%;
+
 }
 
 .menu-selector {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   background-color: transparent;
   padding: 10px 0;
   cursor: pointer;
@@ -58,6 +49,8 @@
 
 .menu-selector li {
   margin: 0 15px;
+  padding-right: 30px;
+
 }
 
 .menu-selector a {
