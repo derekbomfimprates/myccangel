@@ -2,6 +2,28 @@
 
 Welcome to the MyCCangel.org website repository. This project aims to create a comprehensive website using the Ionic framework and use data analyses tool to help user with advices.This project includes a Python-based Chatbot AI that utilizes advanced natural language processing (NLP) techniques to provide insights, answer user queries, and perform sentiment analysis. Below is an overview of the core features and functionality integrated into the chatbot:
 
+# Disclaimer
+The content provided on this website, including all text, graphics, images, and other material, is for informational purposes only and is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always check the advice of your qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have read on this website.
+
+If you think you may have a medical emergency, call your doctor, go to the emergency department, or call emergency services immediately. 
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+- [Key Features](#key-features)
+- [Core Functions](#core-functions)
+- [Example Usage](Example-usage)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## About the Project
+
+
 # Key Features
 Text Cleaning and Processing: The chatbot cleans and processes user input by removing unwanted characters, stopwords, and converting words to their base forms (lemmatization). This step ensures accurate data for NLP processing and model predictions.
 
@@ -31,25 +53,6 @@ Cleans the query text and extracts keywords.
 Searches local PDF files for relevant information, then performs an internet search to gather external resources.
 Combines and summarizes these findings to provide a concise, informative response.
 Analyzes the sentiment of the response to tailor the delivery tone, ensuring a personalized user experience.
-
-# Disclaimer
-The content provided on this website, including all text, graphics, images, and other material, is for informational purposes only and is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always check the advice of your qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have read on this website.
-
-If you think you may have a medical emergency, call your doctor, go to the emergency department, or call emergency services immediately. 
-
-## Table of Contents
-
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## About the Project
-
 
 
 ## Features
