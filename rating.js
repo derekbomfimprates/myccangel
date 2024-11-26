@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const submitRatingButton = document.getElementById("submitRating");
+document.addEventListener("DOMContentLoaded", function () {
+  let selectedRating = null;
   const ratingInput = document.getElementById("ratingInput");
+  const submitRatingButton = document.getElementById("submitRating");
   const ratingResponse = document.getElementById("ratingResponse");
   const correctionSection = document.createElement("div");
 
+  // Create correction section for user feedback
   correctionSection.id = "correctionSection";
   correctionSection.style.display = "none";
   correctionSection.innerHTML = `
@@ -14,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(correctionSection);
 
   if (submitRatingButton) {
-    submitRatingButton.addEventListener("click", async () => {
+    submitRatingButton.addEventListener("click", async function () {
       const rating = ratingInput.value.trim();
 
       if (/^[1-5]$/.test(rating)) {
-        const selectedRating = parseInt(rating, 10);
+        selectedRating = parseInt(rating, 10);
         try {
           const response = await fetch("/rate", {
             method: "POST",
@@ -29,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
           const data = await response.json();
           ratingResponse.innerHTML = `<p>${data.response}</p>`;
 
-          // Show correction section if needed
           if (data.ask_for_correction) {
             correctionSection.style.display = "block";
           } else {
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  correctionSection.addEventListener("click", async (event) => {
+  correctionSection.addEventListener("click", async function (event) {
     if (event.target.id === "submitCorrection") {
       const correctionInput = document.getElementById("correctionInput");
       const correction = correctionInput.value.trim();
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const data = await response.json();
           ratingResponse.innerHTML = `<p>${data.response}</p>`;
           correctionSection.style.display = "none";
-          correctionInput.value = ""; // Clear correction box
+          correctionInput.value = ""; // Clear input
         } catch (error) {
           ratingResponse.innerHTML = `<p style="color: red;">An error occurred while submitting your correction. Please try again later.</p>`;
         }
